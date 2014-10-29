@@ -19,5 +19,6 @@ end
 
 group :production do
   gem "unicorn"
+  gem 'mina', '~> 0.3.1'
 end
 
