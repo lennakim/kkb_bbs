@@ -13,12 +13,14 @@ set :deploy_to, '/home/deploy/www/kkb_bbs'
 set :current_path, 'current'
 set :app_path,  "#{deploy_to}/#{current_path}"
 
-set :repository, ''
+set :repository, 'git@bitbucket.org:hammer-man/kkb_bbs.git'
 set :keep_releases, 20
 
 set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/unicorn.pid" }
 
 set :shared_paths, [
+  'config/database.yml',
+  'config/secrets.yml',
   'public/uploads',
   'log',
   'tmp'
@@ -41,6 +43,8 @@ task setup: :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/public/uploads"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/uploads"]
 
+  queue! %[touch "#{deploy_to}/shared/config/database.yml"]
+  queue! %[touch "#{deploy_to}/shared/config/secrets.yml"]
 end
 
 desc "Deploys the current version to the server."
