@@ -10,6 +10,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'kaminari'
 
+gem 'rest_client', '~> 1.8.1'
+gem 'kaminari'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'elasticsearch-rails', '~> 0.1.6'
+
 group :development, :test do
   gem "quiet_assets"
   gem "pry-rails"
