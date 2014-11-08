@@ -17,6 +17,8 @@ gem 'elasticsearch-rails', '~> 0.1.6'
 gem 'faye-rails', '~> 2.0.0'
 gem 'thin'  # for faye
 gem 'foreman'
+gem 'rubycas-client' #sso
+gem 'settingslogic' # YAML 配置信息
 
 group :development, :test do
   gem "quiet_assets"
