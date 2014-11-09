@@ -19,6 +19,7 @@ gem 'thin'  # for faye
 gem 'foreman'
 gem 'rubycas-client' #sso
 gem 'settingslogic' # YAML 配置信息
+gem 'rails_kindeditor'
 
 group :development, :test do
   gem "quiet_assets"

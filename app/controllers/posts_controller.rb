@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-
+# 未添加权限
   def index
+    @nodes = Node.all
     if params[:node_id]
       @node = Node.where(id: params[:node_id])
       @posts = @node.posts.recent.page(params[:page])
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    # 登录才能发表
     @post = Post.new
   end
 
@@ -25,6 +27,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    # 只能自己修改
 
   end
 

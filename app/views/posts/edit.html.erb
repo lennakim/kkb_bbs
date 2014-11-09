@@ -1,0 +1,8 @@
+<p>更新帖子</p>
+<%= form_for @post do |f|%>
+  标题：<%= f.text_field :title %>
+  <p></p>
+  内容：<%= f.kindeditor :content, :window_onload => true %>
+
+  <%= f.submit "发表"%>
+<% end %>
