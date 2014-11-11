@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   if Rails.env.production?
     http_basic_authenticate_with name: "kkb_bbs", password: "secret"
   end
+
+  def store_location(path)
+    session[:return_to] = path
+  end
 end
