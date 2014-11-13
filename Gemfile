@@ -18,6 +18,11 @@ gem 'faye-rails', '~> 2.0.0'
 gem 'thin'  # for faye
 gem 'foreman'
 
+# elasticsearch
+gem 'elasticsearch', '~> 1.0.6'
+gem 'elasticsearch-model', '~> 0.1.6'
+gem 'elasticsearch-rails', '~> 0.1.6'
+
 group :development, :test do
   gem "quiet_assets"
   gem "pry-rails"
