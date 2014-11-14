@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   scope :recent, -> {order(created_at: :desc)}
 
   belongs_to :node
+  has_many :comments, as: 'commentable'
 end

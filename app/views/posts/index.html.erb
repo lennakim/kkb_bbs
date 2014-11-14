@@ -1,0 +1,11 @@
+<p>节点列表</p>
+<% @nodes.each do |node| %>
+  <%= link_to node.name, "#"%>
+<% end %>
+
+<p>帖子列表</p>
+<% @posts.each do |post|%>
+  <%= link_to post.title, post_path(post)%>
+<% end %>
+
+<br>
