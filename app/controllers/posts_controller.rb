@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  before_action :set_post, except: [:index, :new, :create, :search]
 # 未添加权限
   def index
     @nodes = Node.all
@@ -19,11 +21,18 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
+    # @post.user = current_user
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to posts_path }
+      else
+        format.html { render action: 'new' }
+      end
+    end
   end
 
   def show
-
   end
 
   def edit
@@ -33,6 +42,7 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
+
     if @post.save
 
     else

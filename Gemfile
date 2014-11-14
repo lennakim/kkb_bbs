@@ -19,6 +19,7 @@ gem 'foreman'
 gem 'rubycas-client' #sso
 gem 'settingslogic' # YAML 配置信息
 gem 'rails_kindeditor'
+gem 'simple_form'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'
