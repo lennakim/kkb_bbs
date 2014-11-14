@@ -1,0 +1,5 @@
+development:
+  cas_base_url: 'https://passport-test.kaikeba.com'
+
+production:
+  cas_base_url: 'https://passport-test.kaikeba.com'
