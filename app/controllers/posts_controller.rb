@@ -48,6 +48,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.search(
+      query: {
+        multi_match: {
+          query: params[:q].to_s,
+          filter: ['title', 'content']
+        }
+      }
+    )
+  end
+
   private
 
   def find_post
