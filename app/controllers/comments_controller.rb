@@ -31,6 +31,10 @@ class CommentsController < ApplicationController
   private
 
   def set_comment
-    Comment.find_by(id: params[:id])
+    @comment = Comment.find_by(id: params[:id])
+  end
+
+  def cmmment_params
+    params.require(:comment).permit!
   end
 end
