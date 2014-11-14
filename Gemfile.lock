@@ -213,7 +213,7 @@ DEPENDENCIES
   kaminari (~> 0.16.1)
   mina (~> 0.3.1)
   mini_magick
-  pg
+  pg (~> 0.17.1)
   pry-nav
   pry-rails
   quiet_assets

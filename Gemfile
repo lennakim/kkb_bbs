@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pg', '~> 0.17.1'
 gem 'rails', '4.1.6'
-gem 'pg'
 gem 'jbuilder', '~> 2.0'
 
 gem 'sass-rails', '~> 4.0.3'
@@ -13,7 +13,6 @@ gem 'rest_client', '~> 1.8.1'
 gem 'kaminari', '~> 0.16.1'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'elasticsearch-rails', '~> 0.1.6'
 gem 'faye-rails', '~> 2.0.0'
 gem 'thin'  # for faye
 gem 'foreman'
