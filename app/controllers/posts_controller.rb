@@ -33,6 +33,15 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html {
+        @comments = @post.comments.order('created_at DESC').page(params[:page]).per(3)
+      }
+
+      format.json { render json: @post }
+    end
   end
 
   def edit
