@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html {
-        @comments = @post.comments.order('created_at DESC').page(params[:page]).per(3)
+        @comments = @post.comments.order('created_at DESC').page(params[:page]).per(20)
       }
 
       format.json { render json: @post }
