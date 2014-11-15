@@ -5,3 +5,7 @@
 <p>
   <%= @post.content %>
 </p>
+<p>
+  <%= render @comments, :post => @post %>
+</p>
+<%= render 'comments/new_comment', :commentable => @post %>

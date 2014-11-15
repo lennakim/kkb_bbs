@@ -1,0 +1,5 @@
+<h3>添加评论</h3>
+<%= simple_form_for [commentable, commentable.comments.new] do |f| %>
+  <%= f.input :body, :input_html => {:class => 'span4', :rows => 3} %>
+  <%= f.submit '保存', :class => 'btn btn-small btn-success' %>
+<% end %>
