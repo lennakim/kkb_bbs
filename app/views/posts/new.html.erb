@@ -1,7 +1,19 @@
 <p>发表新帖</p>
 <%= form_for @post do |f|%>
   标题：<%= f.text_field :title %>
-  <p></p>
+
+<p>帖子分类</p>
+<%= select_tag :category, options_for_select([["请选择帖子分类", "0"],
+["新手ZONE", "1"],
+["学习小组", "2"],
+["互动答疑", "3"],
+["劲爆活动", "4"],
+["社区贴贴", "5"],
+["屌丝集中营", "6"],
+["挨踢肿么了", "7"],
+["资源分享", "8"]],
+[@status, @status_value]) %>
+  
   内容：<%= f.kindeditor :content, :window_onload => true %>
 
   <%= f.submit "发表"%>
