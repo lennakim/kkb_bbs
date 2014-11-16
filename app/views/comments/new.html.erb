@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topic New</title>
+  <link rel="stylesheet" href="css/topic_new.css">
+</head>
+<body class="body page-index clearfix">
+<header>
+ <!-- #render "_header_html" -->
+</header>
+<div class="container">
+<p><b>发布新帖</b></p>
+ 标题<%= text_field 'user','name' , :size=>20 %>
+ 帖子分类  <%= select_tag :trend, options_for_select([["正常", "1"],
+["禁用", "0"]],
+[@status, @status_value]) %>
+关键字<%= text_field 'user','name' , :size=>20 %>
+投票:
+<%= radio_button_tag 'fee','1', false %> 是  
+<%= radio_button_tag 'fee','0',false %> 否
+
+<p>1· 选项: 最多可填写50个选项</p>
+
+<%= text_field 'user','name' , :size=>20 %>
+
+<%= text_field 'user','name' , :size=>20 %>
+<%= text_field 'user','name' , :size=>20 %>
+<%= text_field 'user','name' , :size=>20 %>
+
+
+<%= kindeditor_tag :content, 'default content value', :width => 800, :height => 300 %>
+</div>
+</body>
+
+
+
