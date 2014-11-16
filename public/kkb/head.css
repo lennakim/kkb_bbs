@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: 0; }
+
+.header {
+  margin-bottom: 20px; }
+  .header .top {
+    overflow: hidden;
+    background: #fff;
+    width: 75%;
+    padding: 0 13%; }
+    .header .top .logo {
+      width: 160px;
+      padding: 0 10px;
+      float: left; }
+    .header .top .top-nav {
+      float: right;
+      overflow: hidden;
+      width: 33%; }
+      .header .top .top-nav li {
+        float: left;
+        margin: 14px 15px;
+        color: #b0b0b0; }
+        .header .top .top-nav li a {
+          color: #b0b0b0; }
+  .header .nav {
+    width: 75%;
+    height: 65px;
+    line-height: 65px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 5px; }
+    .header .nav li {
+      float: left;
+      width: 12%;
+      text-align: center; }
+      .header .nav li:nth-child(1) a {
+        background: #288ce6;
+        color: #fff; }
+      .header .nav li a {
+        color: #555555;
+        border-radius: 5px;
+        width: 80%;
+        height: 37px;
+        line-height: 37px;
+        margin: 15px auto;
+        display: block; }
+        .header .nav li a:hover {
+          background: #288ce6;
+          color: #fff; }
+    .header .nav .write {
+      background: url("image/checkin_button.png") no-repeat;
+      background-size: 100%;
+      background-position: 0 15px;
+      color: #fff; }
+      .header .nav .write a:hover {
+        background: none;
+        color: #fff; }
+    .header .nav .write-times a {
+      width: 100%;
+      background: #faaa3c;
+      color: #fff; }
+      .header .nav .write-times a:hover {
+        background: #faaa3c;
+        color: #fff; }
