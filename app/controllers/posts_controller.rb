@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-
+  before_action :all_nodes
   before_action :set_post, except: [:index, :new, :create, :search]
 # 未添加权限
   def index
     @nodes = Node.all
     if params[:node_id]
-      @node = Node.where(id: params[:node_id])
+      @node = Node.where(id: params[:node_id]).first
       @posts = @node.posts.recent.page(params[:page])
     elsif params[:level]
       @posts = Post.where(level: params[:level]).recent.page(params[:page])
@@ -82,6 +82,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find_by(id: params[:id])
+  end
+  def all_nodes
+    @nodes = Node.all
   end
 
   def post_params

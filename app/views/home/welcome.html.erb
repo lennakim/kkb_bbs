@@ -24,13 +24,14 @@
             </ul>
           </div>
           <div class="best list">
+            <% @posts.each do |post|%>
             <dl>
               <dt>
                 <%= image_tag "head-img.gif" %>
               </dt>
               <dd class="post-name">
                 <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
+                <span><%= link_to post.title, post_path(post)%></span>
                 <span class="tag-new">NEW</span>
                 <span class="tag-best">精华</span>
                 <span class="tag-mark">
@@ -48,30 +49,7 @@
                 <input name="check" type="checkbox">
               </dd> -->
             </dl>
-            <dl>
-              <dt>
-                <%= image_tag "head-img.gif" %>
-              </dt>
-              <dd class="post-name">
-                <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
-                <span class="tag-new">NEW</span>
-                <span class="tag-best">精华</span>
-                <span class="tag-mark">
-                  <%= image_tag "mark.gif" %>
-                </span>
-              </dd>
-              <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                    <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
-              </dd>
-              <!-- <dd class="choice">
-                <input name="check" type="checkbox">
-              </dd> -->
-            </dl>
+            <% end %>
             <!-- <div class="edit">
               <p class="choice">
                 <input class="check-all" type="checkbox">
@@ -83,94 +61,6 @@
               </ul>
             </div> -->
           </div>
-          <div class="hot list hidden">
-            <dl>
-              <dt>
-                <%= image_tag "head-img.gif" %>
-              </dt>
-              <dd class="post-name">
-                <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
-                <span class="tag-new">NEW</span>
-                <span class="tag-best">精华</span>
-                <span class="tag-mark">
-                  <%= image_tag "mark.gif" %>
-                </span>
-              </dd>
-              <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
-              </dd>
-            </dl>
-          </div>
-          <div class="new list hidden">
-            <dl>
-              <dt>
-                <%= image_tag "head-img.gif" %>
-              </dt>
-              <dd class="post-name">
-                <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
-                <span class="tag-new">NEW</span>
-                <span class="tag-best">精华</span>
-                <span class="tag-mark">
-                  <%= image_tag "mark.gif" %>
-                </span>
-              </dd>
-              <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                <%= image_tag "head-img.gif" %>
-              </dt>
-              <dd class="post-name">
-                <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
-                <span class="tag-new">NEW</span>
-                <span class="tag-best">精华</span>
-                <span class="tag-mark">
-                  <%= image_tag "head-img.gif" %>
-                </span>
-              </dd>
-              <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                <%= image_tag "head-img.gif" %>
-                </dt>
-              <dd class="post-name">
-                <span class="tag-top">置顶</span>
-                <span><a href="">帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称帖子名称</a></span>
-                <span class="tag-new">NEW</span>
-                <span class="tag-best">精华</span>
-                <span class="tag-mark">
-                  <%= image_tag "mark.gif" %>
-                </span>
-              </dd>
-              <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
-              </dd>
-            </dl>
-          </div>
         </div>
         <div class="page">
           < 1 2 3 4 5 >
@@ -179,7 +69,9 @@
       <div class="right">
         <input class="search" type="text">
         <%= image_tag "search_icon.png", class: "search-bar" %>
-        <%= image_tag "new_topic.png", class: "new-topic" %>
+        <a href="/posts/new">
+          <%= image_tag "new_topic.png", class: "new-topic" %>
+        </a>
         <div class="topic">
           <h2>社区话题</h2>
           <ul class="topic-tag">

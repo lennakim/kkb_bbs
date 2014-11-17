@@ -1,0 +1,5 @@
+Node.create(:name => "精华部落")
+Node.create(:name => "新手zone")
+Node.create(:name => "学习小组")
+Node.create(:name => "互动答疑")
+Node.create(:name => "劲爆活动")
