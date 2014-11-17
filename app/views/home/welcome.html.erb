@@ -67,7 +67,11 @@
         </div>
       </div>
       <div class="right">
-        <input class="search" type="text">
+        <%= form_tag(search_posts_path, method: :get) do %>
+          <%= text_field_tag :q, nil, class: 'search' %>
+          <%= submit_tag("Search") %>
+        <% end %>
+
         <%= image_tag "search_icon.png", class: "search-bar" %>
         <a href="/posts/new">
           <%= image_tag "new_topic.png", class: "new-topic" %>
