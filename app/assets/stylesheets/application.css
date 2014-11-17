@@ -1,4 +1,6 @@
 /*
- *= require_tree .
+ *= require head
+ *= require foot
+ *= require index
  *= require_self
  */
