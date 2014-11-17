@@ -56,7 +56,8 @@ task deploy: :environment do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
-    queue! "rake db:seed RAILS_ENV=production"
+    queue "rake db:seed RAILS_ENV=production"
+    queue "rake environment elasticsearch:import:model CLASS='Post' FORCE=yes"
 
     to :launch do
       invoke :'unicorn:restart'

@@ -68,14 +68,15 @@ class PostsController < ApplicationController
   end
 
   def search
+
     @posts = Post.search(
       query: {
         multi_match: {
           query: params[:q].to_s,
-          filter: ['title', 'content']
+          fields: ['title', 'content']
         }
       }
-    )
+    ).records
   end
 
   private
