@@ -13,10 +13,7 @@ gem 'rest_client', '~> 1.8.1'
 gem 'kaminari', '~> 0.16.1'
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'faye-rails', '~> 2.0.0'
-gem 'thin'  # for faye
-gem 'foreman'
-gem 'rubycas-client' #sso
+gem 'rubycas-client', git: 'git://github.com/rubycas/rubycas-client.git'
 gem 'settingslogic' # YAML 配置信息
 gem 'rails_kindeditor'
 gem 'simple_form'
