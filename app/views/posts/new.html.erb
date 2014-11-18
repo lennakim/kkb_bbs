@@ -1,5 +1,8 @@
 <p>发表新帖</p>
 <%= form_for @post do |f|%>
+  <p>
+  节点选择：<%= f.select :node_id, Node.all.map { |c| [c.name, c.id] }%>
+  </p>
   标题：<%= f.text_field :title %>
   <p></p>
   内容：<%= f.kindeditor :content, :window_onload => true %>
