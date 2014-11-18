@@ -1,5 +1,7 @@
 development:
   cas_base_url: 'https://passport-test.kaikeba.com'
+  cas_service_url: 'http://0.0.0.0:3000/service'
 
 production:
   cas_base_url: 'https://passport-test.kaikeba.com'
+  cas_service_url: 'http://101.66.251.223/service'
