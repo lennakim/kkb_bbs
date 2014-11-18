@@ -2,5 +2,6 @@
  *= require head
  *= require foot
  *= require index
+ *= require new_post
  *= require_self
  */
