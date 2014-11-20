@@ -1,11 +1,12 @@
 class TopicsController < ApplicationController
-  before_action :all_nodes
+  before_action :node_list
   before_action :set_topic, except: [:index, :new, :create, :search]
 
 # 未添加权限
   def index
     if params[:node_id]
-      @node = Node.where(id: params[:node_id]).first
+      @node = Node.find(params[:node_id])
+
       @topics = @node.topics.recent.page(params[:page])
     elsif params[:level]
       @topics = Topic.where(level: params[:level]).recent.page(params[:page])
@@ -33,40 +34,29 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
-
-    respond_to do |format|
-      format.html {
-        @comments = @topic.comments.order('created_at DESC').page(params[:page])
-      }
-    end
+    @comments = @topic.comments.recent.page(params[:page])
   end
 
   def edit
-    # 只能自己修改
-
   end
 
   def update
     @topic.update(topic_params)
 
-    if @topic.save
-
+    if @topic.update
+      redirect_to @topic
     else
-
+      render action: :edit
     end
   end
 
   def destroy
-    if @topic.destroy
+    @topic.destroy
 
-    else
-
-    end
+    redirect_to topics_path
   end
 
   def search
-
     @topics = Topic.search(
       query: {
         multi_match: {
@@ -79,12 +69,12 @@ class TopicsController < ApplicationController
 
   private
 
-  def all_nodes
-    @nodes = Node.all
+  def node_list
+    @nodes = Node.list
   end
 
   def set_topic
-    @topic = Topic.find_by(id: params[:id])
+    @topic = Topic.find(params[:id])
   end
 
   def topic_params

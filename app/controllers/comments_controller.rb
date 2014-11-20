@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-  before_filter :find_commentable
+  before_action :find_commentable
 
   def create
     @comment = @commentable.comments.new(comment_params)
-    # @comment.user = current_user
+    @comment.user = current_user
 
     if @comment.save
       redirect_to @commentable
@@ -27,19 +27,17 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = @commentable.comments.find(params[:id])
+    @comment.destroy
 
+    redirect_to @commentable
   end
 
   private
 
-  def set_comment
-    @comment = Comment.find_by(id: params[:id])
-  end
-
   def find_commentable
-    commentable_id = params.keys.select {|key| key =~ /([a-z]+)_id/}.first
-    commentable_model = commentable_id.split('_')[0].camelcase.constantize
-    @commentable = commentable_model.find(params[commentable_id])
+    resource, id = request.path.split('/')[1, 2]
+    @commentable = resource.singularize.classify.constantize.find(id)
   end
 
   def comment_params

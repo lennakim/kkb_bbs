@@ -18,9 +18,8 @@ ActiveRecord::Schema.define(version: 20141120033122) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
-    t.integer  "topic_id"
-    t.text     "body"
     t.integer  "commentable_id"
+    t.text     "body"
     t.string   "commentable_type"
     t.integer  "receiver_id"
     t.integer  "parent_comment_id"
