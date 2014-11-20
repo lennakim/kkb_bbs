@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :node_list
   before_action :login_required, except: [:index, :show, :search]
   before_action :set_topic, except: [:index, :new, :create, :search]
