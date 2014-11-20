@@ -8,7 +8,7 @@
           <li><a href=""><img src="" alt=""></a></li>
           <li><a href=""><img src="" alt=""></a></li>
           <li><a href=""><img src="" alt=""></a></li>
-          <li class="username">Jonathan<var></var></li>
+          <li class="username"><%= current_user.try(:name) || "请登录" %><var></var></li>
         </ul>
       </div>
       <ul class="nav">

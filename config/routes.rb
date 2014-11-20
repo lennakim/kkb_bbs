@@ -5,15 +5,14 @@ Rails.application.routes.draw do
   get 'service',   to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  resources :users
+
   resources :nodes
 
   resources :topics do
     resources :comments
     get :search, on: :collection
   end
-
-  resources :topics
-  resources :comments
 
   root "home#welcome"
 end

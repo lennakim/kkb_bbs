@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
 
   scope :recent, -> {order(created_at: :desc)}
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true, touch: true
   belongs_to :commentable, polymorphic: true, counter_cache: true, touch: true
 
   def find_commentable

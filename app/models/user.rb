@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     User.where('lower(email) = ? or lower(name) = ?', login, login).first
   end
 
+  def admin?
+    false
+  end
+
   def active? #是否激活
     confirmed.present?
   end
