@@ -8,8 +8,22 @@ class SessionsController < ApplicationController
   end
 
   def create
+
     if session[:cas_user].present?
-      render json: {msg: :ok}
+      login = session[:cas_user].downcase
+      @user = User.login_user login
+
+      if @user.blank?
+        @user = User.new
+        @user.uuid = session[:cas_extra_attributes]['uuid']
+        @user.email = session[:cas_extra_attributes]['email']
+        @user.name = session[:cas_extra_attributes]['name'] || session[:cas_extra_attributes]['username']
+        @user.confirmed_at = session[:cas_extra_attributes]['confirmed_at']
+      end
+
+      @user.save!
+      login_as @user
+      redirect_to root_url
     else
       redirect_to CASClient::Frameworks::Rails::Filter.login_url(self)
     end
