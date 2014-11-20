@@ -39,11 +39,11 @@
                 </span>
               </dd>
               <dd class="post-info">
-                <span>用户名用户名用户名</span><var>·</var>
-                <span>1个月前</span><var>·</var>
-                <span>学习小组</span><var>·</var>
-                <span>276浏览</span><var>·</var>
-                <span>62回复</span>
+                <span><%= topic.user.name %></span><var>·</var>
+                <span><%= format_datetime(topic.created_at) %></span><var>·</var>
+                <span><%= topic.node.title %></span><var>·</var>
+                <span>0浏览</span><var>·</var>
+                <span><%= topic.comments_count %>回复</span>
               </dd>
               <!-- <dd class="choice">
                 <input name="check" type="checkbox">
@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="page">
-          < 1 2 3 4 5 >
+          <%= paginate @topics %>
         </div>
       </div>
       <div class="right">
