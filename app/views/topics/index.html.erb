@@ -18,9 +18,9 @@
           <div class="title">
             <h3>全部帖子</h3>
             <ul class="tags">
-              <li>精品帖子</li>
-              <li>热门帖子</li>
-              <li>最新帖子</li>
+              <li><a href="javascript:;">精品帖子</a></li>
+              <li><a href="javascript:;">热门帖子</a></li>
+              <li><a href="javascript:;">最新帖子</a></li>
             </ul>
           </div>
           <div class="best list">
@@ -75,14 +75,9 @@
         <div class="topic">
           <h2>社区话题</h2>
           <ul class="topic-tag">
-            <li>精华部落(10)</li>
-            <li>新手zone(10)</li>
-            <li>互动答疑(10)</li>
-            <li>劲爆活动(10)</li>
-            <li>学习小组(10)</li>
-            <li>社区贴贴(10)</li>
-            <li>屌丝集中营</li>
-            <li>挨踢肿么了</li>
+            <% @title_list.each do |title| %>
+              <li><%= link_to "#{title}(10)", "#" %></li>
+            <% end %>
           </ul>
         </div>
         <div class="share">

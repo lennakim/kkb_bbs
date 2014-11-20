@@ -5,6 +5,8 @@ class TopicsController < ApplicationController
 
 # 未添加权限
   def index
+    @title_list = Node.list.pluck(:title)
+
     if params[:node_id]
       @node = Node.find(params[:node_id])
 
