@@ -12,11 +12,10 @@
         </ul>
       </div>
       <ul class="nav">
-        <li><a href="">首页</a></li>
+        <li><a href="/">首页</a></li>
         <% @nodes.each do |node| %>
-        <li><%= link_to node.name,posts_path(:node_id => node.id)%></li>
+        <li><%= link_to node.title, topics_path(:node_id => node.id)%></li>
         <% end %>
         <li><a class="more" href="">更多</a></li>
-        <li class="write-times"><a href="">已连续签到21次</a></li>
       </ul>
     </div>

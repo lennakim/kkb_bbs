@@ -24,14 +24,14 @@
             </ul>
           </div>
           <div class="best list">
-            <% @posts.each do |post|%>
+            <% @topics.each do |topic|%>
             <dl>
               <dt>
                 <%= image_tag "head-img.gif" %>
               </dt>
               <dd class="post-name">
                 <span class="tag-top">置顶</span>
-                <span><%= link_to post.title, post_path(post)%></span>
+                <span><%= link_to topic.title, topic_path(topic)%></span>
                 <span class="tag-new">NEW</span>
                 <span class="tag-best">精华</span>
                 <span class="tag-mark">
@@ -69,7 +69,7 @@
       <div class="right">
         <input class="search" type="text">
         <%= image_tag "search_icon.png", class: "search-bar" %>
-        <a href="/posts/new">
+        <a href="<%= new_topic_path %>">
           <%= image_tag "new_topic.png", class: "new-topic" %>
         </a>
         <div class="topic">

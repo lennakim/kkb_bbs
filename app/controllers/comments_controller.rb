@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_filter :find_commentable
+
   def create
-    @comment = @commentable.comments.new(cmmment_params)
+    @comment = @commentable.comments.new(comment_params)
     # @comment.user = current_user
-    
+
     if @comment.save
       redirect_to @commentable
     else
@@ -37,11 +38,11 @@ class CommentsController < ApplicationController
 
   def find_commentable
     commentable_id = params.keys.select {|key| key =~ /([a-z]+)_id/}.first
-    commentable_model = commentable_id.split('_')[0].camelcase.constantize # Post
-    @commentable = commentable_model.find(params[commentable_id]) # Post.find(params['post_id'])
+    commentable_model = commentable_id.split('_')[0].camelcase.constantize
+    @commentable = commentable_model.find(params[commentable_id])
   end
 
-  def cmmment_params
+  def comment_params
     params.require(:comment).permit!
   end
 end

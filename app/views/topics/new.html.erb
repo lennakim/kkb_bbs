@@ -1,0 +1,10 @@
+<p>发表新帖</p>
+<%= form_for @topic do |f|%>
+  标题：<%= f.text_field :title %> <br>
+
+  节点选择：<%= f.select :node_id, Node.all.map { |c| [c.title, c.id] }%> <br>
+
+  内容：<%= f.kindeditor :body, window_onload: true %>
+
+  <%= f.submit "发表"%>
+<% end %>
