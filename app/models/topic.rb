@@ -4,7 +4,7 @@ class Topic < ActiveRecord::Base
 
   scope :recent, -> {order(created_at: :desc)}
 
-  belongs_to :user
+  belongs_to :user, counter_cache: true, touch: true
   belongs_to :node, counter_cache: true, touch: true
 
   has_many :comments, as: :commentable

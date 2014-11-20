@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :node_list
+  before_action :login_required, except: [:index, :show, :search]
   before_action :set_topic, except: [:index, :new, :create, :search]
 
 # 未添加权限
@@ -16,7 +17,6 @@ class TopicsController < ApplicationController
   end
 
   def new
-    # 登录才能发表
     @topic = Topic.new
   end
 
@@ -80,4 +80,5 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit!
   end
+
 end

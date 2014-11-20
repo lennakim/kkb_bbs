@@ -17,6 +17,7 @@ gem 'rubycas-client', git: 'git://github.com/rubycas/rubycas-client.git'
 gem 'settingslogic' # YAML 配置信息
 gem 'rails_kindeditor'
 gem 'simple_form'
+gem 'cancancan'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'
