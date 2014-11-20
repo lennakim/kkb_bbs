@@ -1,0 +1,11 @@
+<p>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <%= raw @topic.body %>
+</p>
+<p>
+  <%= render @comments, post: @topic %>
+</p>
+<%= render 'comments/new_comment', commentable: @topic %>
