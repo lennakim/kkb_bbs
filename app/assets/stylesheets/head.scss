@@ -22,6 +22,7 @@ $bac-orange: #faaa3c;
 		overflow: hidden;
 		background: #fff;
 		width: 75%;
+		height: 50px;
 		padding: 0 13%;
 		.logo{
 			width: 160px;
@@ -31,7 +32,7 @@ $bac-orange: #faaa3c;
 		.top-nav{
 			float: right;
 			overflow: hidden;
-			width: 33%;
+			width: 40%;
 			li{
 				float: left;
 				margin: 14px 15px;
@@ -51,7 +52,8 @@ $bac-orange: #faaa3c;
 		border-radius: 5px;
 		li{
 			float: left;
-			width: 12%;
+			width: 14%;
+			overflow: hidden;
 			text-align: center;
 			&:nth-child(1){
 				a{
@@ -69,27 +71,6 @@ $bac-orange: #faaa3c;
 				display: block;
 				&:hover{
 					background: $bac_blue; 
-					color: #fff;
-				}
-			}
-		}
-		.write{
-			background: url('image/checkin_button.png') no-repeat;
-			background-size: 100%;
-			background-position: 0 15px;
-			color: #fff;
-			a:hover{
-				background: none;
-				color: #fff;
-			}
-		}
-		.write-times{
-			a{
-				width: 100%;
-				background: $bac-orange;
-				color: #fff;
-				&:hover{
-					background: $bac-orange;
 					color: #fff;
 				}
 			}
