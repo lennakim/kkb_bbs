@@ -1,8 +1,8 @@
 class CreateTopics < ActiveRecord::Migration
   def change
     create_table :topics do |t|
-      t.integer  :user_id
-      t.integer  :node_id
+      t.belongs_to :user, index: true
+      t.belongs_to :node, index: true
       t.string   :title
       t.string   :permalink
       t.text     :body
@@ -13,5 +13,8 @@ class CreateTopics < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :topics, :id, unique: true
+
   end
 end
