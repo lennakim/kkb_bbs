@@ -7,5 +7,7 @@ class CreateNodes < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :nodes, :id, unique: true
   end
 end
