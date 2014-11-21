@@ -7,6 +7,14 @@ class User < ActiveRecord::Base
     User.where('lower(email) = ? or lower(name) = ?', login, login).first
   end
 
+  def unread_notifications
+    notifications.unread.recent
+  end
+
+  def read_notifications
+    notifications.had_read.recent
+  end
+
   def admin?
     false
   end
@@ -14,4 +22,5 @@ class User < ActiveRecord::Base
   def active? #是否激活
     confirmed.present?
   end
+
 end

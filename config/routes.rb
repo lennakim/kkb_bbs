@@ -5,13 +5,20 @@ Rails.application.routes.draw do
   get 'service',   to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :users
+  resources :users do
+    resources :comments
+    resources :notifications
+    resources :topics
+  end
 
   resources :nodes
 
   resources :topics do
     resources :comments
-    get :search, on: :collection
+
+    collection do
+      get :search
+    end
   end
 
   root "home#welcome"
