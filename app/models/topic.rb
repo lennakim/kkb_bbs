@@ -7,7 +7,7 @@ class Topic < ActiveRecord::Base
   belongs_to :user, counter_cache: true, touch: true
   belongs_to :node, counter_cache: true, touch: true
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   def last_comment
     Comment.find(last_comment_id)

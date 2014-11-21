@@ -15,9 +15,7 @@ class Ability
   end
 
   def user_can #一般用户
-    can :modify, Topic do |topic|
-      topic.user == @user
-    end
+    can :search, Topic #search ability
 
     can :rw, Topic
     can :modify, Topic do |topic|
