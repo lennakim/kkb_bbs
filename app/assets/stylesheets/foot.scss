@@ -46,8 +46,7 @@ $bac-orange: #faaa3c;
 				height: 60px;
 				li{
 					float: left;
-					margin: 0 5%;
-					width: 15%;
+					width: 25%;
 					text-align: center;
 				}
 			}
@@ -67,17 +66,16 @@ $bac-orange: #faaa3c;
 				float: left;
 				.attention,.listen{
 					width: 100%;
-					height: 45px;
 					margin-bottom: 10px;
 				}
 			}
 			.chat{
-				width: 40%;
+				width: 37%;
 				float: right;
 				margin-bottom: 10px;
 			}
 			.qq{
-				width: 40%;
+				width: 37%;
 				float: right;
 			}
 		}
