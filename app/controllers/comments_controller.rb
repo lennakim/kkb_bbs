@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
+
+  before_action :login_required
   before_action :find_commentable
 
   def create
