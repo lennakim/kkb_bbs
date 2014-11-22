@@ -14,4 +14,8 @@ class Notification < ActiveRecord::Base
   def set_read
     update(unread: true)
   end
+
+  def find_subjectable
+    self.subjectable_type.singularize.classify.constantize.find_by(id: self.subjectable_id)
+  end
 end

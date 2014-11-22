@@ -1,0 +1,92 @@
+    <link rel="stylesheet" href="/kkb/personal_center.css">
+
+    <div class="main">
+      <div class="left">
+        <div class="user">
+          <%= image_tag "head-img.jpg" %>
+          <p><%= @user.name %></p>
+        </div>
+        <ul>
+          <li class="selected">帖子</li>
+          <li>回复</li>
+          <li>通知</li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="post-list post">
+          <div class="title">
+            <h3><%= @user.name %><span>发布的帖子</span></h3>
+          </div>
+          <div class="list">
+              <% @topics.each do |topic| %>
+                <dl>
+                  <dt>
+                    <%= avatar_tag @user.avatar %>
+                  </dt>
+                  <dd class="post-name">
+                    <span>
+                      <%= link_to topic.title, topic %>
+                    </span>
+                    <span class="tag-top">置顶</span>
+                    <span class="tag-new">NEW</span>
+                    <span class="tag-best">精华</span>
+                    <span class="tag-mark">
+                      <%= image_tag "mark.gif" %>
+                    </span>
+                  </dd>
+                  <dd class="post-info">
+                    <span><%= @user.name %></span><var>·</var>
+                    <span><%= format_datetime(topic.created_at) %></span><var>·</var>
+                    <span><%= topic.node.title %></span><var>·</var>
+                    <span>0浏览</span><var>·</var>
+                    <span><%= topic.comments_count %>回复</span>
+                  </dd>
+                  <!-- <dd class="choice">
+                    <input name="check" type="checkbox">
+                  </dd> -->
+                </dl>
+              <% end %>
+            <!-- <div class="edit">
+              <p class="choice">
+                <input class="check-all" type="checkbox">
+                <span>全选</span>
+              </p>
+              <ul class="edit">
+                <li>删除帖子</li>
+                <li>删除帖子，并封禁楼主3天</li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <div class="post-list reply hidden">
+          <div class="title">
+            <h3><%= @user.name %><span>的回复</span></h3>
+          </div>
+          <div class="list">
+            <% @comments.each do |comment| %>
+              <dl>
+                <dt><%= avatar_tag @user.avatar %></dt>
+                <dd class="post-name">
+                  <span><a href="#"><%= comment.body %></a></span>
+                </dd>
+                <dd class="post-info">
+                  <span><%= @user.name %></span><var>·</var>
+                  <span><%= format_datetime(comment.created_at) %></span>
+                </dd>
+                <!-- <dd class="choice">
+                  <input name="check" type="checkbox">
+                </dd> -->
+              </dl>
+            <% end %>
+          </div>
+        </div>
+        <div class="post-list inform hidden">
+          通知
+          <% @notifications.each do |notification| %>
+            <%= format_datetime(notification.created_at) %>
+            <br>
+            <%= notification.find_subjectable.try(:body) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
