@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get 'home/welcome'
 
   get 'login',     to: 'sessions#new', as: 'login'
