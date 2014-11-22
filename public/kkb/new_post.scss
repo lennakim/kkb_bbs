@@ -1,0 +1,160 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul{	
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: 0;
+}
+$font-gray: #555;
+$font-blue: #3d85cc;
+$bac-blue: #288ce6;
+$bac-gray: #eeeded;
+$bac-deep-blue: #18222d;
+$bac-orange: #faaa3c;
+.wrapper{
+	width: 100%;
+	background: #f4f4f4;
+	.main{
+		width: 45%;
+		margin: 20px auto;
+		overflow: hidden;
+		position: relative;
+		.post-item{
+			width: 100%;
+			margin: 15px 0;
+			overflow: hidden;
+			input{
+				height: 30px;
+				line-height: 30px;
+				border-radius: 3px;
+				padding: 0 10px;
+				color: $font-gray;
+				border: 1px solid #ccc;
+				font-size: 16px;
+			}
+			p{
+				color: $font-gray;
+			}
+			.title{
+				width: 15%;
+				display: block;
+				float: left;
+				text-align: center;
+				color: $font-gray;
+			}
+			.con{
+				width: 80%;
+				float: left;
+				.select-title{
+					overflow: hidden;
+					.select,.dropdown{
+						float: left;
+						height: 30px;
+						line-height: 30px;
+						background: #fff;
+						text-align: center;
+					}
+					.select{
+						padding: 0 10px;
+						width: 40%;
+						border: 1px solid #ccc;
+						border-radius: 5px 0 0 5px;
+					}
+					.dropdown{
+						width: 30px;
+						border-top: 1px solid #ccc;
+						border-right: 1px solid #ccc;
+						border-bottom: 1px solid #ccc;
+						border-radius: 0 5px 5px 0;
+						cursor: pointer;
+						cursor: hand;
+					}
+				}
+				.hidden{
+					display: none;
+				}
+				.post-type{
+					line-height: 30px;
+					width: 51%;
+					border: 1px solid #ccc;
+					border-radius: 5px;
+					margin-top: 5px;
+					color: $font-gray;
+					background: #fff;
+					li{
+						padding: 5px 10px;
+						&:hover{
+							background: $bac-blue;
+							color: #fff;
+						}
+					}
+				}
+				.radios{
+					overflow: hidden;
+					span,input{
+						float: left;
+						height: 30px;
+						line-height: 30px;
+						margin: 0 5px;
+					}
+				}
+				.tips{
+					color: #999;
+					font-size: 14px;
+					margin-top: 5px;
+				}
+				.vote-title{
+					margin: 10px 0;
+					font-size: 14px;
+					.text{
+						width: 80px;
+						margin: 0 10px;
+					}
+				}
+				.new-vote{
+					text-decoration: underline;
+					color: $font-blue;
+					cursor: pointer;
+					cursor: hand;
+				}
+				.vote-item{
+					overflow: hidden;
+					input{
+						height: 30px;
+						line-height: 30px;
+						margin: 3px 0;
+						width: 60%;
+						float: left;
+					}
+					.delete{
+						float: left;
+						width: 30px;
+						height: 35px;
+						background: url('image/delete.png') no-repeat;
+						background-position: 0 3px;
+						cursor: pointer;
+						cursor: hand;
+					}
+				}
+				textarea{
+					width: 100%;
+				}
+				.btn{
+					width: 90px;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					border-radius: 5px;
+					background: $bac-blue;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

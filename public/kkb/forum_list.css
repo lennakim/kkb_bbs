@@ -24,36 +24,11 @@ img {
     .wrapper .main .left {
       width: 70%;
       margin-right: 3%; }
-      .wrapper .main .left .slider {
-        width: 100%;
-        height: 237px;
-        overflow: hidden;
-        position: relative;
+      .wrapper .main .left .crumbs {
+        color: #666;
         margin-bottom: 20px; }
-        .wrapper .main .left .slider .show {
-          width: 75%;
-          float: left; }
-        .wrapper .main .left .slider .description {
-          width: 71%;
-          position: absolute;
-          bottom: 0;
-          background: #000;
-          opacity: 0.6;
-          padding: 2%; }
-          .wrapper .main .left .slider .description span {
-            display: block;
-            color: #fff; }
-            .wrapper .main .left .slider .description span:nth-child(1) {
-              font-size: 14px; }
-            .wrapper .main .left .slider .description span:nth-child(2) {
-              font-size: 12px; }
-        .wrapper .main .left .slider .slider-tag {
-          width: 25%;
-          float: right; }
-          .wrapper .main .left .slider .slider-tag img {
-            width: 100%;
-            height: 30%;
-            float: left; }
+        .wrapper .main .left .crumbs a {
+          color: #666; }
       .wrapper .main .left .post-list {
         background: #fff;
         border-radius: 5px;
@@ -84,8 +59,7 @@ img {
           display: none; }
         .wrapper .main .left .post-list .best, .wrapper .main .left .post-list .hot, .wrapper .main .left .post-list .new {
           overflow: hidden;
-          padding-bottom: 15px;
-          border-bottom: 1px solid #eeeded; }
+          padding-bottom: 15px; }
           .wrapper .main .left .post-list .best dl, .wrapper .main .left .post-list .hot dl, .wrapper .main .left .post-list .new dl {
             overflow: hidden;
             padding: 20px;
@@ -119,33 +93,8 @@ img {
                 margin: 0 5px; }
             .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dd {
               width: 68%; }
-            .wrapper .main .left .post-list .best dl .choice, .wrapper .main .left .post-list .hot dl .choice, .wrapper .main .left .post-list .new dl .choice {
-              width: 7%;
-              float: right; }
           .wrapper .main .left .post-list .best .border-bottom, .wrapper .main .left .post-list .hot .border-bottom, .wrapper .main .left .post-list .new .border-bottom {
             border-bottom: 1px dashed #fbfbfb; }
-          .wrapper .main .left .post-list .best .edit, .wrapper .main .left .post-list .hot .edit, .wrapper .main .left .post-list .new .edit {
-            width: 35%;
-            float: right;
-            font-size: 12px;
-            margin: 10px 0; }
-            .wrapper .main .left .post-list .best .edit .choice, .wrapper .main .left .post-list .best .edit .edit, .wrapper .main .left .post-list .hot .edit .choice, .wrapper .main .left .post-list .hot .edit .edit, .wrapper .main .left .post-list .new .edit .choice, .wrapper .main .left .post-list .new .edit .edit {
-              margin: 10px 0; }
-            .wrapper .main .left .post-list .best .edit .choice, .wrapper .main .left .post-list .hot .edit .choice, .wrapper .main .left .post-list .new .edit .choice {
-              width: 90%;
-              text-align: right;
-              color: #555555; }
-            .wrapper .main .left .post-list .best .edit .edit, .wrapper .main .left .post-list .hot .edit .edit, .wrapper .main .left .post-list .new .edit .edit {
-              width: 100%;
-              overflow: hidden;
-              color: #fff; }
-              .wrapper .main .left .post-list .best .edit .edit li, .wrapper .main .left .post-list .hot .edit .edit li, .wrapper .main .left .post-list .new .edit .edit li {
-                padding: 10px;
-                background: #288ce6;
-                border-radius: 5px;
-                float: left; }
-                .wrapper .main .left .post-list .best .edit .edit li:nth-child(1), .wrapper .main .left .post-list .hot .edit .edit li:nth-child(1), .wrapper .main .left .post-list .new .edit .edit li:nth-child(1) {
-                  margin-right: 5px; }
       .wrapper .main .left .page {
         width: 40%;
         float: right;
@@ -153,7 +102,8 @@ img {
         margin: 20px 0; }
     .wrapper .main .right {
       width: 27%;
-      position: relative; }
+      position: relative;
+      margin-top: 40px; }
       .wrapper .main .right .search {
         width: 99%;
         height: 40px;
@@ -206,8 +156,6 @@ img {
           .wrapper .main .right .share dl dd {
             font-size: 14px;
             color: #adadad; }
-      .wrapper .main .right .ad-img img {
-        margin-bottom: 10px; }
     .wrapper .main .sidebar {
       position: fixed;
       top: 200px;

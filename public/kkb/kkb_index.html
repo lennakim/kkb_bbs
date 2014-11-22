@@ -37,8 +37,6 @@
 				<li><a href="">互动答疑</a></li>
 				<li><a href="">劲爆活动</a></li>
 				<li><a class="more" href="">更多</a></li>
-				<!-- <li class="write"><a href=""></a></li> -->
-				<li class="write-times"><a href="">已连续签到21次</a></li>
 			</ul>
 		</div>
 		<div class="main">
@@ -53,8 +51,8 @@
 					</a>
 					<ul class="slider-tag">
 						<li><img src="image/slider1.jpg" alt=""></li>
-						<li><img src="image/slider1.jpg" alt=""></li>
-						<li><img src="image/slider1.jpg" alt=""></li>
+						<li><img src="image/2.jpg" alt=""></li>
+						<li><img src="image/3.jpg" alt=""></li>
 					</ul>
 				</div>
 				<div class="post-list">
@@ -342,6 +340,21 @@
 				flag = 1;
 			}
 		});
+
+		//slider
+		$('.slider-tag li img').click(function(){
+			var src = $(this).attr('src');
+			$('.show').attr('src',src);
+		});
+		var index = 0;
+		setInterval(function(){
+			if(index<2){
+				index++;
+			}else{
+				index = 0;
+			}
+			$('.slider-tag li img').eq(index).click();
+		},3000);
 	</script>
 </body>
 </html>

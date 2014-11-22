@@ -31,42 +31,11 @@ $bac-orange: #faaa3c;
 		.left{
 			width: 70%;
 			margin-right: 3%;
-			.slider{
-				width: 100%;
-				height: 237px;
-				overflow: hidden;
-				position: relative;
+			.crumbs{
+				color: #666;
 				margin-bottom: 20px;
-				.show{
-					width: 75%;
-					float: left;
-				}
-				.description{
-					width: 71%;
-					position: absolute;
-					bottom: 0;
-					background: #000;
-					opacity: 0.6;
-					padding: 2%;
-					span{
-						display: block;
-						color: #fff;
-						&:nth-child(1){
-							font-size: 14px;
-						}
-						&:nth-child(2){
-							font-size: 12px;
-						}
-					}
-				}
-				.slider-tag{
-					width: 25%;
-					float: right;
-					img{
-						width: 100%;
-						height:30%;
-						float: left;
-					}
+				a{
+					color: #666;
 				}
 			}
 			.post-list{
@@ -106,7 +75,6 @@ $bac-orange: #faaa3c;
 				.best,.hot,.new{
 					overflow: hidden;
 					padding-bottom: 15px;
-					border-bottom: 1px solid $bac-gray;
 					dl{
 						overflow: hidden;
 						padding: 20px;
@@ -152,41 +120,9 @@ $bac-orange: #faaa3c;
 						dd{
 							width: 68%;
 						}
-						.choice{
-							width: 7%;
-							float: right;
-						}
 					}
 					.border-bottom{
 						border-bottom: 1px dashed #fbfbfb
-					}
-					.edit{
-						width: 35%;
-						float: right;
-						font-size: 12px;
-						margin: 10px 0;
-						.choice,.edit{
-							margin: 10px 0;
-						}
-						.choice{
-							width: 90%;
-							text-align: right;
-							color: $font-gray;
-						}
-						.edit{
-							width: 100%;
-							overflow: hidden;
-							color: #fff;
-							li{
-								padding: 10px;
-								background: $bac-blue;
-								border-radius: 5px;
-								float: left;
-								&:nth-child(1){
-									margin-right: 5px;
-								}
-							}
-						}
 					}
 				}
 			}
@@ -200,6 +136,7 @@ $bac-orange: #faaa3c;
 		.right{
 			width: 27%;
 			position: relative;
+			margin-top: 40px;
 			.search{
 				width: 99%;
 				height: 40px;
@@ -267,11 +204,6 @@ $bac-orange: #faaa3c;
 						font-size: 14px;
 						color: #adadad;
 					}
-				}
-			}
-			.ad-img{
-				img{
-					margin-bottom: 10px;
 				}
 			}
 		}

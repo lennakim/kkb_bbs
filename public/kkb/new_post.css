@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: 0; }
+
+.wrapper {
+  width: 100%;
+  background: #f4f4f4; }
+  .wrapper .main {
+    width: 45%;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative; }
+    .wrapper .main .post-item {
+      width: 100%;
+      margin: 15px 0;
+      overflow: hidden; }
+      .wrapper .main .post-item input {
+        height: 30px;
+        line-height: 30px;
+        border-radius: 3px;
+        padding: 0 10px;
+        color: #555555;
+        border: 1px solid #ccc;
+        font-size: 16px; }
+      .wrapper .main .post-item p {
+        color: #555555; }
+      .wrapper .main .post-item .title {
+        width: 15%;
+        display: block;
+        float: left;
+        text-align: center;
+        color: #555555; }
+      .wrapper .main .post-item .con {
+        width: 80%;
+        float: left; }
+        .wrapper .main .post-item .con .select-title {
+          overflow: hidden; }
+          .wrapper .main .post-item .con .select-title .select, .wrapper .main .post-item .con .select-title .dropdown {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            background: #fff;
+            text-align: center; }
+          .wrapper .main .post-item .con .select-title .select {
+            padding: 0 10px;
+            width: 40%;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px; }
+          .wrapper .main .post-item .con .select-title .dropdown {
+            width: 30px;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            cursor: hand; }
+        .wrapper .main .post-item .con .hidden {
+          display: none; }
+        .wrapper .main .post-item .con .post-type {
+          line-height: 30px;
+          width: 51%;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-top: 5px;
+          color: #555555;
+          background: #fff; }
+          .wrapper .main .post-item .con .post-type li {
+            padding: 5px 10px; }
+            .wrapper .main .post-item .con .post-type li:hover {
+              background: #288ce6;
+              color: #fff; }
+        .wrapper .main .post-item .con .radios {
+          overflow: hidden; }
+          .wrapper .main .post-item .con .radios span, .wrapper .main .post-item .con .radios input {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            margin: 0 5px; }
+        .wrapper .main .post-item .con .tips {
+          color: #999;
+          font-size: 14px;
+          margin-top: 5px; }
+        .wrapper .main .post-item .con .vote-title {
+          margin: 10px 0;
+          font-size: 14px; }
+          .wrapper .main .post-item .con .vote-title .text {
+            width: 80px;
+            margin: 0 10px; }
+        .wrapper .main .post-item .con .new-vote {
+          text-decoration: underline;
+          color: #3d85cc;
+          cursor: pointer;
+          cursor: hand; }
+        .wrapper .main .post-item .con .vote-item {
+          overflow: hidden; }
+          .wrapper .main .post-item .con .vote-item input {
+            height: 30px;
+            line-height: 30px;
+            margin: 3px 0;
+            width: 60%;
+            float: left; }
+          .wrapper .main .post-item .con .vote-item .delete {
+            float: left;
+            width: 30px;
+            height: 35px;
+            background: url("image/delete.png") no-repeat;
+            background-position: 0 3px;
+            cursor: pointer;
+            cursor: hand; }
+        .wrapper .main .post-item .con textarea {
+          width: 100%; }
+        .wrapper .main .post-item .con .btn {
+          width: 90px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 5px;
+          background: #288ce6;
+          color: #fff; }
