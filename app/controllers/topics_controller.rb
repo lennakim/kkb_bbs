@@ -38,6 +38,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic_user = @topic.user
     @comments = @topic.comments.recent.page(params[:page])
   end
 

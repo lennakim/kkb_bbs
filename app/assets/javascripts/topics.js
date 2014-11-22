@@ -1,6 +1,8 @@
 $(document).ready(function(){
+  (function(){
     // topics new
     var flag = 1;
+
     $('.select-title .dropdown').click(function(){
       if(flag == 1){
         $(this).parent().siblings('.post-type').removeClass('hidden');
@@ -18,7 +20,9 @@ $(document).ready(function(){
     $('.new-vote').click(function(){
       $(this).prev('ul').append('<li><input type="text"><var class="delete"></var></li>');
     });
+  }());
 
+  (function(){
     //帖子 切换
     $('.left li').click(function(){
       var index = $(this).index();
@@ -36,4 +40,22 @@ $(document).ready(function(){
     $('.personal_center ul li').click(function(){
       $(this).addClass('selected').siblings().removeClass('selected');
     });
+  }());
+
+  (function(){
+    // topic show
+    var flag = 1;
+
+    $('.post-list .add-btn li:nth-child(2)').click(function(){
+      if(flag == 1){
+        $(this).addClass('bac').parents('.top-btn').siblings('.reply').removeClass('hidden');
+        $(this).text('收起回复');
+        flag = 0;
+      }else{
+        $(this).removeClass('bac').parents('.top-btn').siblings('.reply').addClass('hidden');
+        $(this).text('回复');
+        flag = 1;
+      }
+    });
+  }());
 });

@@ -4,7 +4,7 @@
         <h3>发布新帖</h3>
         <div class="post-item">
           <span class="title">标题</span>
-          <%= f.text_field :title, class:"con", placeholder: "请输入帖子标题"  %>
+          <%= f.text_field :title, class: :con, placeholder: "请输入帖子标题"  %>
         </div>
         <div class="post-item">
           <span class="title">帖子分类</span>
@@ -43,7 +43,7 @@
           <span class="title">帖子内容</span>
           <div class="con">
             <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
-              <input type="submit" class="btn" value="发布新帖">
+            <input type="submit" class="btn" value="发布新帖">
           </div>
         </div>
       <% end %>
