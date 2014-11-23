@@ -47,11 +47,18 @@
             </dd>
           </dl>
           <dl class="sofa">
-            <dt><%= avatar_tag @comments.first.user.avatar %><p><%= @comments.first.user.name %></p></dt>
-            <dd>
-              <p class="time"><%= format_datetime(@comments.first.created_at) %></p>
-              <p><%= raw @comments.first.body %></p>
-            </dd>
+            <% if @first_comment.present? %>
+              <dt>
+                <%= avatar_tag @first_comment.user.avatar %>
+                <p><%= @first_comment.user.name %></p>
+              </dt>
+              <dd>
+                <p class="time">
+                  <%= format_datetime(@first_comment.created_at) %>
+                </p>
+                <p><%= raw @first_comment.body %></p>
+              </dd>
+            <% end %>
             <dd class="reply-con">
               <div class="top-btn">
                 <span class="inform">举报</span>
@@ -60,9 +67,10 @@
                   <li>回复</li>
                 </ul>
               </div>
+
               <div class="reply hidden">
                 <dl>
-                  <dt><%= avatar_tag current_user.avatar %></dt>
+                  <dt><%= avatar_tag current_user.avatar if current_user %></dt>
                   <dd>
                     <p class="username">冯玉玉Caroline</p>
                     <p>使在线学习者的学习体验得到质的飞跃。升级后的课程以最高质量带给用户极致的用户体验，提升平均时间的信息量的传递，让教育变得更有趣，更有信息量。学习者满足了视听享受，也就更有动力完成更多的课程。</p>
@@ -93,8 +101,8 @@
         <div class="post-reply">
           <dl>
             <dt>
-              <%= avatar_tag current_user.avatar %>
-              <p><%= current_user.name %></p>
+              <%= avatar_tag current_user.avatar if current_user %>
+              <p><%= current_user.name if current_user %></p>
             </dt>
             <dd>
               <%= render 'comments/new_comment', commentable: @topic %>

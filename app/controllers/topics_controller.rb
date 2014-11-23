@@ -20,6 +20,13 @@ class TopicsController < ApplicationController
     end
   end
 
+  def show
+    @topic_user = @topic.user
+    @first_comment = @topic.first_comment
+    @second_comment = @topic.second_comment
+    @comments = @topic.comments.recent.page(params[:page])
+  end
+
   def new
     @topic = Topic.new
   end
@@ -35,11 +42,6 @@ class TopicsController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-  end
-
-  def show
-    @topic_user = @topic.user
-    @comments = @topic.comments.recent.page(params[:page])
   end
 
   def edit
