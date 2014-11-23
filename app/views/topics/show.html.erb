@@ -1,145 +1,156 @@
 <link rel="stylesheet" href="/kkb/forum_detail.css">
-    <div class="main">
-      <div class="left">
-        <div class="crumbs">
-          <a href="/">论坛首页</a> >
-          <a href="/"><%= @topic.node.title %></a>
-        </div>
-        <div class="post-list">
-          <dl>
-            <dt><%= avatar_tag @topic_user.avatar %><p><%= @topic_user.name %></p></dt>
-            <dd class="post-name">
-              <span><%= link_to @topic.title, '#'%></span>
-              <span class="tag-top">置顶</span>
-              <span class="tag-new">NEW</span>
-              <span class="tag-best">精华</span>
-              <span class="tag-mark">
-                <%= image_tag "mark.gif" %>
-              </span>
-            </dd>
-            <dd class="post-info">
-              <span><%= @topic.user.name %></span><var>·</var>
-              <span><%= format_datetime(@topic.created_at) %></span><var>·</var>
-              <span><%= @topic.node.title %></span><var>·</var>
-              <span>0浏览</span><var>·</var>
-              <span><%= @topic.comments_count %>回复</span>
-            </dd>
-            <dd class="con">
-              <%= raw @topic.body %>
-            </dd>
-            <dd class="share-to">
-              <ul class="share-btn">
-                <li>分享到：</li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href="">举报</a></li>
-              </ul>
-              <ul class="reply-btn">
-                <li>收藏</li>
-                <li><%= image_tag "msg.png" %>回复</li>
-              </ul>
-            </dd>
-          </dl>
-          <dl class="sofa">
-            <dt><%= avatar_tag @comments.first.user.avatar %><p><%= @comments.first.user.name %></p></dt>
-            <dd>
-              <p class="time"><%= format_datetime(@comments.first.created_at) %></p>
-              <p><%= raw @comments.first.body %></p>
-            </dd>
-            <dd class="reply-con">
-              <div class="top-btn">
-                <span class="inform">举报</span>
-                <ul class="add-btn">
-                  <li>收藏</li>
-                  <li>回复</li>
-                </ul>
-              </div>
-              <div class="reply hidden">
-                <dl>
-                  <dt><%= avatar_tag current_user.avatar %></dt>
-                  <dd>
-                    <p class="username">冯玉玉Caroline</p>
-                    <p>使在线学习者的学习体验得到质的飞跃。升级后的课程以最高质量带给用户极致的用户体验，提升平均时间的信息量的传递，让教育变得更有趣，更有信息量。学习者满足了视听享受，也就更有动力完成更多的课程。</p>
-                    <p class="time">
-                      <span>2014-09-12 16:00</span>
-                      <span>举报</span>
-                    </p>
-                    <p class="reply-btn">回复</p>
-                  </dd>
-                </dl>
-                <div class="reply-textarea">
-                  <div class="top-btn">
-                    <p class="others">
-                      <span>还有剩余13条回复，</span>
-                      <a class="click" href="">点击查看</a>
-                    </p>
-                    <p class="reply-host">提交回复</p>
-                  </div>
-                  <div class="textarea">
-                    <textarea name="" id=""></textarea>
-                    <p class="reply-btn" type="submit">回复楼主</p>
-                  </div>
-                </div>
-              </div>
-            </dd>
-          </dl>
-        </div>
-        <div class="post-reply">
-          <dl>
-            <dt>
-              <%= avatar_tag current_user.avatar %>
-              <p><%= current_user.name %></p>
-            </dt>
-            <dd>
-              <%= render 'comments/new_comment', commentable: @topic %>
-            </dd>
-          </dl>
-        </div>
-      </div>
-      <div class="right">
-        <input class="search" type="text">
-        <%= image_tag "search_icon.png", class: 'search-bar' %>
-
-        <a href="<%= new_topic_path %>">
-          <%= image_tag "new_topic.png", class:  'new-topic' %>
-        </a>
-        <div class="topic">
-          <h2>社区话题</h2>
-          <ul class="topic-tag">
-            <li>精华部落(10)</li>
-            <li>新手zone(10)</li>
-            <li>互动答疑(10)</li>
-            <li>劲爆活动(10)</li>
-            <li>学习小组(10)</li>
-            <li>社区贴贴(10)</li>
-            <li>屌丝集中营</li>
-            <li>挨踢肿么了</li>
-          </ul>
-        </div>
-        <div class="share">
-          <h2>资源分享</h2>
-          <dl>
-            <dt>移动互联网创业者生存生存者移动互联网创业者生存创业创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-        </div>
-      </div>
+<div class="main">
+  <div class="left">
+    <div class="crumbs">
+      <a href="">论坛首页</a> >
+      <a href="">模块一</a>
     </div>
+    <div class="post-list">
+      <dl>
+        <dt><img src="<%= @topic_user.avatar%>" alt=""><p><%= @topic_user.name%></p></dt>
+        <dd class="post-name">
+          <span class="tag-top">置顶</span>
+          <span><a href=""><%= @topic.title%></a></span>
+          <span class="tag-new">NEW</span>  
+          <span class="tag-best">精华</span>
+          <span class="tag-mark"><img src="image/mark.gif" alt=""></span>
+        </dd>
+        <dd class="post-info">
+          <span><%= @topic_user.name%></span><var>·</var>
+          <span>1个月前</span><var>·</var>
+          <span><%= @topic.node.title%></span><var>·</var>
+          <span>276浏览</span><var>·</var>
+          <span><%= @topic.comments.count%>回复</span>
+        </dd>
+        <dd class="con">
+          <%= raw @topic.body %>
+        </dd>
+        <dd class="share-to">
+          <ul class="share-btn">
+            <li>分享到：</li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href=""><img src="" alt=""></a></li>
+            <li><a href="">举报</a></li>
+          </ul>
+          <ul class="reply-btn">
+            <li>收藏</li>
+            <li><img src="image/msg.png" alt="">回复</li>
+          </ul>
+        </dd>
+      </dl>
+      <%@comments.each do |comment|%>
+      <dl class="sofa">
+        <dt><img src="<%= @topic_user.avatar %>" alt=""><p><%= @topic_user.name %></p></dt>
+        <dd>
+          <p class="time">2014-09-12 16:00</p>
+          <p><%= comment.body%></p>
+        </dd>
+        <dd class="reply-con">
+          <div class="top-btn">
+            <span class="inform">举报</span>
+            <ul class="add-btn">
+              <li>收藏</li>
+              <li>回复</li>
+            </ul>
+          </div>
+<!--           <div class="reply hidden">
+            <dl>
+              <dt><img src="image/head-img.gif" alt=""></dt>
+              <dd>
+                <p class="username">冯玉玉Caroline</p>
+                <p>使在线学习者的学习体验得到质的飞跃。升级后的课程以最高质量带给用户极致的用户体验，提升平均时间的信息量的传递，让教育变得更有趣，更有信息量。学习者满足了视听享受，也就更有动力完成更多的课程。</p>
+                <p class="time">
+                  <span>2014-09-12 16:00</span>
+                  <span>举报</span>
+                </p>
+                <p class="reply-btn">回复</p>
+              </dd>
+            </dl>
+            <div class="reply-textarea">
+              <div class="top-btn">
+                <p class="others">
+                  <span>还有剩余13条回复，</span>
+                  <a class="click" href="">点击查看</a> 
+                </p>
+                <p class="reply-host">提交回复</p>
+              </div>
+              <div class="textarea">
+                <textarea name="" id=""></textarea>
+                <p class="reply-btn" type="submit">回复楼主</p>
+              </div>
+            </div>  
+          </div> -->
+        </dd>
+      </dl>
+      <% end %>
+
+    </div>
+    <div class="post-reply">
+      <dl>
+        <dt><img src="<%= current_user.try(:avatar)%>" alt=""><p><%=current_user.try(:name)%></p></dt>
+        <dd>
+          <%= render 'comments/new_comment', commentable: @topic %>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="right">
+    <input class="search" type="text">
+    <img class="search-bar" src="image/search_icon.png" alt="">
+    <img class="new-topic" src="image/new_topic.png">
+    <div class="topic">
+      <h2>社区话题</h2>
+      <ul class="topic-tag">
+        <li>精华部落(10)</li>
+        <li>新手zone(10)</li>
+        <li>互动答疑(10)</li>
+        <li>劲爆活动(10)</li>
+        <li>学习小组(10)</li>
+        <li>社区贴贴(10)</li> 
+        <li>屌丝集中营</li>
+        <li>挨踢肿么了</li>
+      </ul>
+    </div>
+    <div class="share">
+      <h2>资源分享</h2>
+      <dl>
+        <dt>移动互联网创业者生存生存者移动互联网创业者生存创业创业者生存</dt>
+        <dd>作者：蓝色泡沫</dd>
+      </dl>
+      <dl>
+        <dt>移动互联网创业者生存</dt>
+        <dd>作者：蓝色泡沫</dd>
+      </dl>
+      <dl>
+        <dt>移动互联网创业者生存</dt>
+        <dd>作者：蓝色泡沫</dd>
+      </dl>
+      <dl>
+        <dt>移动互联网创业者生存</dt>
+        <dd>作者：蓝色泡沫</dd>
+      </dl> 
+    </div>
+  </div>
+</div>
+  
+  <script>
+    var flag = 1;
+    $('.post-list .add-btn li:nth-child(2)').click(function(){
+      if(flag == 1){
+        $(this).addClass('bac').parents('.top-btn').siblings('.reply').removeClass('hidden');
+        $(this).text('收起回复');
+        flag = 0;
+      }else{
+        $(this).removeClass('bac').parents('.top-btn').siblings('.reply').addClass('hidden');
+        $(this).text('回复');
+        flag = 1;
+      }
+    });
+  </script>
+
