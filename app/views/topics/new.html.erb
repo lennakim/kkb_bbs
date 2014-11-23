@@ -43,7 +43,7 @@
           <span class="title">帖子内容</span>
           <div class="con">
             <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
-            <input type="submit" class="btn" value="发布新帖">
+              <%= f.submit "发布新帖", class:"btn"%>
           </div>
         </div>
       <% end %>

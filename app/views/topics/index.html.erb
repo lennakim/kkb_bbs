@@ -1,21 +1,7 @@
-<link rel="stylesheet" href="/kkb/forum_list.css">
+<link rel="stylesheet" href="/kkb/index.css">
 
     <div class="main">
       <div class="left">
-        <div class="slider">
-          <a href="">
-            <%= image_tag "slider1.jpg", class: "show" %>
-            <p class="description">
-              <span>这里是帖子的名称，可能很长很长，但是也有可能很短很短。</span>
-              <span>用户名稍微有点长·学习小组·276浏览·62回复</span>
-            </p>
-          </a>
-          <ul class="slider-tag">
-            <li> <%= image_tag "slider1.jpg" %> </li>
-            <li> <%= image_tag "slider1.jpg" %> </li>
-            <li> <%= image_tag "slider1.jpg" %> </li>
-            </ul>
-        </div>
         <div class="post-list">
           <div class="title">
             <h3>全部帖子</h3>
@@ -69,7 +55,11 @@
         </div>
       </div>
       <div class="right">
-        <input class="search" type="text">
+        <%= form_tag(search_topics_path, method: :get) do %>
+          <%= text_field_tag :q, nil, class: 'search' %>
+          <%= submit_tag("Search") %>
+        <% end %>
+
         <%= image_tag "search_icon.png", class: "search-bar" %>
         <a href="<%= new_topic_path %>">
           <%= image_tag "new_topic.png", class: "new-topic" %>
