@@ -19,6 +19,7 @@ gem 'settingslogic' # YAML 配置信息
 gem 'rails_kindeditor'
 gem 'simple_form'
 gem 'cancancan', '~> 1.9'
+gem 'datagrid'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'
