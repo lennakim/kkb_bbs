@@ -1,14 +1,17 @@
     <div class="header">
       <div class="top">
-        <a href="">
+        <a href="<%= root_path %>">
           <%= image_tag "logo.png" %>
         </a>
         <ul class="top-nav">
-          <li><a href="/">返回开课吧首页</a></li>
-          <li><a href=""><img src="" alt=""></a></li>
-          <li><a href=""><img src="" alt=""></a></li>
-          <li><a href=""><img src="" alt=""></a></li>
-          <li class="username"><%= current_user.try(:name) || "请登录" %><var></var></li>
+          <li><%= link_to "返回开课吧首页", root_path %></li>
+          <% if current_user %>
+            <li><%= link_to current_user.name, current_user %></li>
+          <% else %>
+            <li><%= link_to "注册", "http://www.kaikeba.com/users/sign_up" %>
+            </li>
+            <li><%= link_to "登录", login_path %></li>
+          <% end %>
         </ul>
       </div>
       <ul class="nav">

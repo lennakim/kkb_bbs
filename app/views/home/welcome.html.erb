@@ -47,21 +47,25 @@
                 <span>0浏览</span><var>·</var>
                 <span><%= topic.comments_count %>回复</span>
               </dd>
-              <!-- <dd class="choice">
+              <% if is_admin? %>
+              <dd class="choice">
                 <input name="check" type="checkbox">
-              </dd> -->
+              </dd>
+              <% end %>
             </dl>
             <% end %>
-            <!-- <div class="edit">
-              <p class="choice">
-                <input class="check-all" type="checkbox">
-                <span>全选</span>
-              </p>
-              <ul class="edit">
-                <li>删除帖子</li>
-                <li>删除帖子，并封禁楼主3天</li>
-              </ul>
-            </div> -->
+            <!--  -->
+            <% if is_admin? %>
+              <div class="edit">
+                <p class="choice">
+                  <input class="check-all" type="checkbox">
+                  <span>全选</span>
+                </p>
+                <ul class="edit">
+                  <li>删除帖子</li>
+                </ul>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="page">
