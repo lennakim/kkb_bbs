@@ -20,6 +20,7 @@ gem 'rails_kindeditor'
 gem 'simple_form'
 gem 'cancancan', '~> 1.9'
 gem 'datagrid'
+gem 'slim-rails'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'
