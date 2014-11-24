@@ -120,12 +120,9 @@
         <div class="topic">
           <h2>社区话题</h2>
           <ul class="topic-tag">
-            <li>精华部落(10)</li>
-            <li>新手zone(10)</li>
-            <li>互动答疑(10)</li>
-            <li>劲爆活动(10)</li>
-            <li>学习小组(10)</li>
-            <li>社区贴贴(10)</li>
+            <% Node.all.each do |node| %>
+              <li><%=node.title%>(<%= node.topics.count%>)</li>
+            <% end %>
             <li>屌丝集中营</li>
             <li>挨踢肿么了</li>
           </ul>

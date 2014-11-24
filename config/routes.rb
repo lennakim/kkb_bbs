@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
   get 'home/welcome'
 
   get 'login',     to: 'sessions#new', as: 'login'
@@ -20,6 +19,9 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+  end
+  namespace :admin do
+    resources :topics
   end
 
   root "home#welcome"

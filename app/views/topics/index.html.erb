@@ -67,8 +67,8 @@
         <div class="topic">
           <h2>社区话题</h2>
           <ul class="topic-tag">
-            <% @title_list.each do |title| %>
-              <li><%= link_to "#{title}(10)", "#" %></li>
+            <% Node.all.each do |node| %>
+              <li><%= link_to "#{node.title}(#{node.topics.count})", topics_path(node_id: node.id) %></li>
             <% end %>
           </ul>
         </div>
