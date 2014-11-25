@@ -36,6 +36,10 @@ class CommentsController < ApplicationController
     redirect_to @commentable
   end
 
+  def trash
+    @comment.trash
+  end
+
   private
 
   def find_commentable

@@ -19,7 +19,18 @@ Rails.application.routes.draw do
     collection do
       get :search
     end
+
+    member do
+      delete :trash
+    end
   end
+
+  resources :comments do
+    member do
+      delete :trash
+    end
+  end
+
   namespace :admin do
     resources :topics
   end

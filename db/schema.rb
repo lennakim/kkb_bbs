@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141122030030) do
+ActiveRecord::Schema.define(version: 20141125013920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20141122030030) do
     t.integer  "parent_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_trashed",        default: false
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 20141122030030) do
     t.integer  "last_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_trashed",      default: false
   end
 
   add_index "topics", ["id"], name: "index_topics_on_id", unique: true, using: :btree

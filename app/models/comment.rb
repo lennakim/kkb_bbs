@@ -1,4 +1,5 @@
 class Comment < ActiveRecord::Base
+  include Trashable
 
   scope :recent, -> {order(created_at: :desc)}
   scope :list, -> {order(created_at: :asc)}
@@ -6,6 +7,30 @@ class Comment < ActiveRecord::Base
   belongs_to :user, counter_cache: true, touch: true
   belongs_to :commentable, polymorphic: true, counter_cache: true, touch: true
   has_many   :notifications, as: :subjectable, dependent: :delete_all
+
+  after_trash   :decrement_counter_cache, :delete_all_notifications
+  after_restore :increment_counter_cache
+  after_destroy :increment_counter_cache, if: :trashed?
+
+  def increment_counter_cache
+    if commentable.has_attribute? :comments_count
+      commentable.class.update_counters commentable.id, comments_count: 1
+    end
+
+    User.update_counters user.id, comments_count: 1
+  end
+
+  def decrement_counter_cache
+    if commentable.has_attribute? :comments_count
+      commentable.class.update_counters commentable.id, comments_count: -1
+    end
+
+    User.update_counters user.id, comments_count: -1
+  end
+
+  def delete_all_notifications
+    notifications.delete_all
+  end
 
   def find_commentable
     self.commentable_type.singularize.classify.constantize.find_by(id: self.commentable_id)
