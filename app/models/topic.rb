@@ -1,6 +1,5 @@
 class Topic < ActiveRecord::Base
   include Trashable
-
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
@@ -10,6 +9,22 @@ class Topic < ActiveRecord::Base
   belongs_to :node, counter_cache: true, touch: true
 
   has_many :comments, as: :commentable, dependent: :destroy
+
+  after_trash   :decrement_counter_cache
+  after_restore :increment_counter_cache
+  after_destroy :increment_counter_cache, if: :trashed?
+
+  def increment_counter_cache
+    if node.has_attribute? :topics_count
+      node.class.update_counters node.id, topics_count: 1
+    end
+  end
+
+  def decrement_counter_cache
+    if node.has_attribute? :topics_count
+      node.class.update_counters node.id, topics_count: -1
+    end
+  end
 
   def first_comment
     comments.list.first

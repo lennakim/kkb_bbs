@@ -63,6 +63,12 @@ class TopicsController < ApplicationController
     redirect_to topics_path
   end
 
+  def trash
+    @topic.trash
+
+    redirect_to topics_path
+  end
+
   def search
     @topics = Topic.search(
       query: {

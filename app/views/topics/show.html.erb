@@ -6,6 +6,10 @@
           <a href="/"><%= @topic.node.title %></a>
         </div>
         <div class="post-list">
+          <% if can? :trash, @topic %>
+            <%= link_to "删除帖子", trash_topic_path(@topic), method: :delete, data: { confirm: "确定删除？" } %>
+          <% end %>
+
           <dl>
             <dt><%= avatar_tag @topic_user.avatar %><p><%= @topic_user.name %></p></dt>
             <dd class="post-name">
@@ -49,7 +53,7 @@
           <dl class="sofa">
             <% if @first_comment.present? %>
               <% if can? :trash, @first_comment %>
-                <%= link_to "删除", trash_topic_comment_path(@topic, @first_comment), method: :delete, data: { confirm: "确定删除？" } %>
+                <%= link_to "删除评论", trash_topic_comment_path(@topic, @first_comment), method: :delete, data: { confirm: "确定删除？" } %>
               <% end %>
               <dt>
                 <%= avatar_tag @first_comment.user.avatar %>
