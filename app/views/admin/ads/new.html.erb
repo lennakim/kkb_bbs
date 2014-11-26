@@ -1,0 +1,15 @@
+<%= form_for [:admin, @ad], :html => { :multipart => true } do |f|%>
+  <p>
+ 内部名称： <%= f.text_field :alise_title %>
+  <p>
+  URL：<%= f.text_field :url %>
+  <p>
+  一级标题：<%= f.text_field :title %>
+  <p>
+  二级标题：<%= f.text_field :sub_title %>
+  <p>
+  上传文件：<%= f.file_field :image %>
+  <p>
+    <%= image_tag(Ad.last.image_url)%>
+  <%= f.submit "提交"%>
+<% end %>

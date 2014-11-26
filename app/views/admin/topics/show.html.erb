@@ -1,0 +1,12 @@
+标题：<%= @topic.title%>
+<p>
+内容: <%=raw @topic.body%>
+<h3>回复列表</h3>
+<p>
+<% @comments.each do |comment|%>
+  <p>
+  <%= comment.body%>
+  </p>
+  用户：<%= comment.user.name%>
+<% end %>
+</p>

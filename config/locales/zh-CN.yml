@@ -15,3 +15,17 @@ zh-CN:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+  datagrid:
+    empty: 没有任何数据查询结果
+    filters:
+      date:
+        range_separator: " ~ "
+      datetime:
+        range_separator: " ~ "
+    form:
+      reset: 复位
+      search: 搜索
+    table:
+      order:
+        asc: "&uarr;"
+        desc: "&darr;"

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :topics
+    resources :ads
   end
 
   root "home#welcome"
