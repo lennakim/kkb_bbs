@@ -1,5 +1,6 @@
 class Topic < ActiveRecord::Base
   include Trashable
+  include Likeable
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 

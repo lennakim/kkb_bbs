@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'service',   to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  concern :likeable do
+    resource :like, only: [:create, :destroy]
+  end
+
   resources :users do
     resources :comments
     resources :notifications

@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   include Trashable
-
+  include Likeable
   scope :recent, -> {order(created_at: :desc)}
   scope :list, -> {order(created_at: :asc)}
 
