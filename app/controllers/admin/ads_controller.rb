@@ -9,8 +9,7 @@ class Admin::AdsController < Admin::BaseController
   end
 
   def create
-    params.permit!
-    @ad = Ad.create(params[:ad])
+    @ad = Ad.create(ad_params)
   end
 
   def edit
@@ -22,7 +21,7 @@ class Admin::AdsController < Admin::BaseController
   end
 
   def update
-    
+    @ad.update(ad_params)
   end
 
   private

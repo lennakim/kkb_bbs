@@ -1,0 +1,7 @@
+<% @ads.each do |ad|%>
+<p>
+  标题：<%= ad.title%>
+  URL：<%= ad.url%>
+  <%= link_to "更新", edit_admin_ad_path(ad)%>
+</p>
+<% end %>
