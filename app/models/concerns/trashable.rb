@@ -9,7 +9,7 @@ module Trashable
     define_model_callbacks :trash, :restore
   end
 
-  def trash?
+  def trashed?
     is_trashed
   end
 

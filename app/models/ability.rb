@@ -35,7 +35,7 @@ class Ability
   end
 
   def account_modify_authority
-    alias_action :edit, :update, :destroy, to: :modify
+    alias_action :edit, :update, :destroy, :trash, to: :modify
   end
 
   def account_rw_authority

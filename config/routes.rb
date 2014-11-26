@@ -14,18 +14,16 @@ Rails.application.routes.draw do
   resources :nodes
 
   resources :topics do
-    resources :comments
+    resources :comments do
+      member do
+        delete :trash
+      end
+    end
 
     collection do
       get :search
     end
 
-    member do
-      delete :trash
-    end
-  end
-
-  resources :comments do
     member do
       delete :trash
     end

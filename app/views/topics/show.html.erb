@@ -48,6 +48,9 @@
           </dl>
           <dl class="sofa">
             <% if @first_comment.present? %>
+              <% if can? :trash, @first_comment %>
+                <%= link_to "删除", trash_topic_comment_path(@topic, @first_comment), method: :delete, data: { confirm: "确定删除？" } %>
+              <% end %>
               <dt>
                 <%= avatar_tag @first_comment.user.avatar %>
                 <p><%= @first_comment.user.name %></p>

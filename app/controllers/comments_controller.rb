@@ -38,6 +38,8 @@ class CommentsController < ApplicationController
 
   def trash
     @comment.trash
+
+    redirect_to @commentable
   end
 
   private

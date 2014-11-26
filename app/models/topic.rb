@@ -19,6 +19,10 @@ class Topic < ActiveRecord::Base
     comments.list.second
   end
 
+  def third_comment
+    comments.list.third
+  end
+
   def last_comment
     Comment.find(last_comment_id)
   end
