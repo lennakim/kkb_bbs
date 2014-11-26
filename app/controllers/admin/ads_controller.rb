@@ -17,7 +17,11 @@ class Admin::AdsController < Admin::BaseController
   end
 
   def destroy
-    
+    if @ad.destroy
+      
+    else
+      
+    end
   end
 
   def update

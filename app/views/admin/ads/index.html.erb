@@ -3,5 +3,7 @@
   标题：<%= ad.title%>
   URL：<%= ad.url%>
   <%= link_to "更新", edit_admin_ad_path(ad)%>
+  <%= link_to "查看", admin_ad_path(ad)%>
+  <%= link_to "删除", admin_ad_path(ad), :method => :delete%>
 </p>
 <% end %>
