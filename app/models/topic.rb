@@ -42,4 +42,10 @@ class Topic < ActiveRecord::Base
   def last_comment
     Comment.find(last_comment_id)
   end
+
+  private
+
+  def self.search_with_es(*args)
+    __elasticsearch__.search(*args)
+  end
 end

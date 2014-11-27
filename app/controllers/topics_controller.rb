@@ -70,7 +70,7 @@ class TopicsController < ApplicationController
   end
 
   def search
-    @topics = Topic.search(
+    @topics = Topic.search_with_es(
       query: {
         multi_match: {
           query: params[:q].to_s,
