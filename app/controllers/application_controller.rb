@@ -44,6 +44,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def no_locked_required
+    #TODO
+  end
+
   def store_location(path)
     session[:return_to] = path
   end

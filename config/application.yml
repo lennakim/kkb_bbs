@@ -4,4 +4,4 @@ development:
 
 production:
   cas_base_url: 'https://passport-test.kaikeba.com'
-  cas_service_url: 'http://101.66.251.223/service'
+  cas_service_url: 'http://kkb.shooter.gl/service'
