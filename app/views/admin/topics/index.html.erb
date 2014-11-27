@@ -1,1 +1,4 @@
+<h3>帖子管理</h3>
+<hr>
+<%= render "layouts/filter", form_target: @admin_topics_grid, :method => :get, :url => admin_topics_path, html: {:class => 'form-inline'} %>
 <%= datagrid_table @admin_topics_grid, @assets, html: {:class => 'table table-bordered'}  %>

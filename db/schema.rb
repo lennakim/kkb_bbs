@@ -31,6 +31,18 @@ ActiveRecord::Schema.define(version: 20141126172017) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
+  create_table "ads", force: true do |t|
+    t.string   "alise_title"
+    t.string   "url"
+    t.string   "title"
+    t.string   "sub_title"
+    t.string   "status"
+    t.string   "ad_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
   create_table "comments", force: true do |t|
     t.integer  "user_id"
     t.integer  "commentable_id"
@@ -114,6 +126,7 @@ ActiveRecord::Schema.define(version: 20141126172017) do
     t.datetime "confirmed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

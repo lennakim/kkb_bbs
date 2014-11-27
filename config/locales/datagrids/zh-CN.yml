@@ -1,0 +1,205 @@
+zh-CN:
+  datagrid:
+    empty: 没有任何数据查询结果
+    filters:
+      date:
+        range_separator: " ~ "
+      datetime:
+        range_separator: " ~ "
+    form:
+      reset: 复位
+      search: 搜索
+    table:
+      order:
+        asc: "&uarr;"
+        desc: "&darr;"
+    dynamic:
+        operations:
+          ">=": "&ge;"
+          "<=": "&le;"
+          "=": "="
+          "=~": "&asymp;"
+
+    admin_ownerships_grid:
+      columns:
+        id: ID
+        app_id: 应用ID
+        name: 应用名称
+        mobile: 手机号码
+        username: 用户名
+        actions: 操作
+      filters:
+        name: 应用名称
+        mobile: 手机号码
+
+    admin_users_grid:
+      columns:
+        id: ID
+        mobile: 手机号码
+        username: 用户名
+        balance_diamond: 钻石
+        balance_flower: 鲜花
+        vip_type: 会员级别
+        ip: 登录IP
+        change_group: 更换阵营
+        group: 阵营
+        add_work: 授权
+        bigV: 大V
+        tdiamond: 可提现钻石总数
+        status: 状态
+        actions: 操作
+      filters:
+        mobile: 手机号码
+        username: 用户名
+
+    admin_works_grid:
+      columns:
+        id: ID
+        media_type: 类型
+        media_url: 文件内容
+        is_private: 查看权限
+        like_num: 目标点赞数量
+        created_at: 发布时间
+        user_id: 发布者
+        group: 阵营
+        media_name: 歌曲名称
+        video_img: 视频截图
+        show_num: 浏览量
+        actions: 操作
+        work_detail: 资源详情
+        chose_group: 阵营分配
+        permissions:
+          'true': 收费
+          'false': 免费
+        types:
+          'image': 图片
+          'video': 视频
+          'music': 音乐
+          'text': 文章
+
+    admin_deposits_grid:
+      columns:
+        id: ID
+        transaction_id: 交易号
+        created_at: 查询时间
+        user_id: 用户名/手机号码
+        money: 金额
+        diamond: 钻石
+        product_id: 产品ID
+        deposit_type: 类型
+        effective: 状态
+        actions: 操作
+      filters:
+        transaction_id: 交易号：
+        product_id: 产品ID：
+        effective: 状态：
+        created_at: 创建时间：
+        mobile: 手机号码：
+      remark: 备注
+      discard: 废除
+      types:
+        'vip': 购买会员
+        'diamond': 充值
+
+    admin_expenses_grid:
+      columns:
+        id: ID
+        created_at: 创建时间
+        star_id: 接收方
+        fans_id: 支付方
+        expensetable_type: 消费类型
+        diamond: 钻石
+        flower: 鲜花
+        status: 状态
+        effective: 是否有效
+        actions: 操作
+      filters:
+        created_at: 查询时间
+        effective: 状态
+        transaction_type: 交易类型
+        owner_mobile: 接收方手机号码
+        payer_mobile: 支付方手机号码
+      discard: 废除
+
+    admin_posts_grid:
+      columns:
+        id: ID
+        created_at: 创建时间
+        author: 发布者
+        reply_to_user: 回复给
+        text: 内容
+        post_type: 类型
+        actions: 操作
+      filters:
+        created_at: 查询时间
+        author: 发布者用户名/手机号
+
+    admin_withdraws_banks_grid:
+      columns:
+        id: ID
+        user_id: 用户名/手机号码
+        created_at: 申请时间
+        diamond: 提取金额
+        bank_source: 银行卡
+        state: 状态
+        actions: 操作
+      filters:
+        created_at: 申请时间
+        mobile: 手机号码
+        bank_extra: 银行
+        aasm_state: 状态
+      reject: 拒绝
+      succeed: 通过
+      succeed_confirm: 确定已处理成功？
+      reject_confirm: 确定拒绝？
+
+    expenses_grid:
+      columns:
+        flower: 免费钻石
+        diamond: 钻石
+        expensetable_type: 消费类型
+        user_id: 对方
+        created_at: 交易时间
+        effective: 是否有效
+        status: 交易结果
+        actions: 操作
+      filters:
+        created_at: 查询时间：
+        effective: 是否有效：
+        status: 交易结果：
+        expensetable_type: 交易类型：
+        user_mobile: 手机号码：
+      show: 交易详情
+
+    deposits_grid:
+      columns:
+        id: ID
+        transaction_id: 交易号
+        created_at: 交易时间
+        money: 金额
+        diamond: 钻石
+        product_id: 产品ID
+        deposit_type: 类型
+        effective: 状态
+      filters:
+        transaction_id: 交易号：
+        product_id: 产品ID：
+        effective: 状态：
+        created_at: 创建时间：
+      types:
+        'vip': 购买会员
+        'diamond': 充值
+
+    incomes_grid:
+      columns:
+        flower: 免费钻石
+        diamond: 钻石
+        expensetable_type: 消费类型
+        user_id: 对方
+        updated_at: 交易完成时间
+        actions: 操作
+      filters:
+        updated_at: 查询时间：
+        expensetable_type: 交易类型：
+        user_mobile: 手机号码：
+      show: 交易详情

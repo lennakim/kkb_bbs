@@ -1,0 +1,11 @@
+内部别名：<%= @ad.alise_title%>
+<p>
+  URL：<%= @ad.url%>
+<p>
+  一级题目：<%= @ad.title%>
+<p>
+  二级题目<%= @ad.sub_title%>
+<p>
+  图片：
+<p>
+  <%= image_tag(@ad.image_url) if @ad.image? %>

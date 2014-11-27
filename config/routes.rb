@@ -30,6 +30,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :topics
+    resources :ads do
+      collection do
+        match 'search' => 'ad#search', via: [:get, :post], as: :search
+      end
+    end
   end
 
   root "home#welcome"
