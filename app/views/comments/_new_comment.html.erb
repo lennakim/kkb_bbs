@@ -1,5 +1,6 @@
-<%= simple_form_for [commentable, commentable.comments.new ] do |f| %>
+<%= simple_form_for(commentable.comments.new) do |f| %>
 
+<%= hidden_field_tag 'commentable', "#{commentable.class.to_s}/#{commentable.id}" %>
   <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
 
   <ul class="post-btn">

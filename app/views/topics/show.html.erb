@@ -45,7 +45,12 @@
                 <li><a href="">举报</a></li>
               </ul>
               <ul class="reply-btn">
-                <li>收藏</li>
+                <li>
+                  <% if @topic.liked_by? current_user %>
+                    <%= link_to "取消收藏", topic_like_path(@topic), method: :delete %></li>
+                  <% else %>
+                    <%= link_to "收藏", topic_like_path(@topic), method: :post %></li>
+                  <% end %>
                 <li><%= image_tag "msg.png" %>回复</li>
               </ul>
             </dd>
@@ -53,7 +58,7 @@
           <dl class="sofa">
             <% if @first_comment.present? %>
               <% if can? :trash, @first_comment %>
-                <%= link_to "删除评论", trash_topic_comment_path(@topic, @first_comment), method: :delete, data: { confirm: "确定删除？" } %>
+                <%= link_to "删除评论", trash_comment_path(@first_comment), method: :delete, data: { confirm: "确定删除？" } %>
               <% end %>
               <dt>
                 <%= avatar_tag @first_comment.user.avatar %>
@@ -65,44 +70,50 @@
                 </p>
                 <p><%= raw @first_comment.body %></p>
               </dd>
-            <% end %>
-            <dd class="reply-con">
-              <div class="top-btn">
-                <span class="inform">举报</span>
-                <ul class="add-btn">
-                  <li>收藏</li>
-                  <li>回复</li>
-                </ul>
-              </div>
+              <dd class="reply-con">
+                <div class="top-btn">
+                  <span class="inform">举报</span>
+                  <ul class="add-btn">
+                    <li>
+                      <% if @first_comment.liked_by? current_user %>
+                        <%= link_to "取消收藏", comment_like_path(@first_comment), method: :delete %>
+                      <% else %>
+                        <%= link_to "收藏", comment_like_path(@first_comment), method: :post %>
+                      <% end %>
+                    </li>
+                    <li>回复</li>
+                  </ul>
+                </div>
 
-              <div class="reply hidden">
-                <dl>
-                  <dt><%= avatar_tag current_user.avatar if current_user %></dt>
-                  <dd>
-                    <p class="username">冯玉玉Caroline</p>
-                    <p>使在线学习者的学习体验得到质的飞跃。升级后的课程以最高质量带给用户极致的用户体验，提升平均时间的信息量的传递，让教育变得更有趣，更有信息量。学习者满足了视听享受，也就更有动力完成更多的课程。</p>
-                    <p class="time">
-                      <span>2014-09-12 16:00</span>
-                      <span>举报</span>
-                    </p>
-                    <p class="reply-btn">回复</p>
-                  </dd>
-                </dl>
-                <div class="reply-textarea">
-                  <div class="top-btn">
-                    <p class="others">
-                      <span>还有剩余13条回复，</span>
-                      <a class="click" href="">点击查看</a>
-                    </p>
-                    <p class="reply-host">提交回复</p>
-                  </div>
-                  <div class="textarea">
-                    <textarea name="" id=""></textarea>
-                    <p class="reply-btn" type="submit">回复楼主</p>
+                <div class="reply hidden">
+                  <dl>
+                    <dt><%= avatar_tag current_user.avatar if current_user %></dt>
+                    <dd>
+                      <p class="username">冯玉玉Caroline</p>
+                      <p>使在线学习者的学习体验得到质的飞跃。升级后的课程以最高质量带给用户极致的用户体验，提升平均时间的信息量的传递，让教育变得更有趣，更有信息量。学习者满足了视听享受，也就更有动力完成更多的课程。</p>
+                      <p class="time">
+                        <span>2014-09-12 16:00</span>
+                        <span>举报</span>
+                      </p>
+                      <p class="reply-btn">回复</p>
+                    </dd>
+                  </dl>
+                  <div class="reply-textarea">
+                    <div class="top-btn">
+                      <p class="others">
+                        <span>还有剩余13条回复，</span>
+                        <a class="click" href="">点击查看</a>
+                      </p>
+                      <p class="reply-host">提交回复</p>
+                    </div>
+                    <div class="textarea">
+                      <textarea name="" id=""></textarea>
+                      <p class="reply-btn" type="submit">回复楼主</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </dd>
+              </dd>
+            <% end %>
           </dl>
         </div>
         <div class="post-reply">

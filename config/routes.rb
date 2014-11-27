@@ -10,27 +10,22 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :comments
-    resources :notifications
-    resources :topics
+    member do
+      get :topics
+      get :comments
+      get :notifications
+    end
   end
 
   resources :nodes
 
-  resources :topics do
-    resources :comments do
-      member do
-        delete :trash
-      end
-    end
+  resources :topics, concerns: [:likeable] do
+    get :search, on: :collection
+    delete :trash, on: :member
+  end
 
-    collection do
-      get :search
-    end
-
-    member do
-      delete :trash
-    end
+  resources :comments, concerns: [:likeable] do
+    delete :trash, on: :member
   end
 
   namespace :admin do
