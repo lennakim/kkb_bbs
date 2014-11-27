@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126150345) do
+ActiveRecord::Schema.define(version: 20141126172017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,11 +52,24 @@ ActiveRecord::Schema.define(version: 20141126150345) do
     t.integer  "parent_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_trashed",        default: false
+    t.integer  "like_counts",       default: 0
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
   add_index "comments", ["id"], name: "index_comments_on_id", unique: true, using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "likeable_id"
+    t.string   "likeable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "nodes", force: true do |t|
     t.string   "title"
@@ -94,6 +107,8 @@ ActiveRecord::Schema.define(version: 20141126150345) do
     t.integer  "last_comment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_trashed",      default: false
+    t.integer  "like_counts",     default: 0
   end
 
   add_index "topics", ["id"], name: "index_topics_on_id", unique: true, using: :btree
