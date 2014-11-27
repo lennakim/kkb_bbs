@@ -1,3 +1,9 @@
+class ActionDispatch::Routing::Mapper
+  def draw(routes_name)
+    instance_eval(File.read(Rails.root.join("config/routes/#{routes_name}.rb")))
+  end
+end
+
 Rails.application.routes.draw do
   get 'home/welcome'
 
@@ -28,14 +34,7 @@ Rails.application.routes.draw do
     delete :trash, on: :member
   end
 
-  namespace :admin do
-    resources :topics
-    resources :ads do
-      collection do
-        match 'search' => 'ad#search', via: [:get, :post], as: :search
-      end
-    end
-  end
-
   root "home#welcome"
+
+  draw :admin
 end
