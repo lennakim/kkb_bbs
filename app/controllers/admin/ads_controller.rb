@@ -1,7 +1,8 @@
 class Admin::AdsController < Admin::BaseController
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
   def index
-    @ads = Ad.all
+    @q = Ad.search(params[:q])
+    @ads = @q.result
   end
 
   def new
@@ -9,7 +10,13 @@ class Admin::AdsController < Admin::BaseController
   end
 
   def create
-    @ad = Ad.create(ad_params)
+    @ad = Ad.new(ad_params)
+    @ad.ad_type = "carousel"
+    if @ad.save
+      redirect_to admin_ad_path(@ad)
+    else
+      render "new"
+    end
   end
 
   def edit
@@ -18,14 +25,24 @@ class Admin::AdsController < Admin::BaseController
 
   def destroy
     if @ad.destroy
-      
+      redirect_to admin_ads_path
     else
-      
+      redirect_to admin_ads_path
     end
   end
 
   def update
     @ad.update(ad_params)
+    if @ad.save
+      redirect_to admin_ad_path(@ad)
+    else
+      render "edit"
+    end
+  end
+
+  def search
+    index
+    render :index
   end
 
   private

@@ -20,6 +20,8 @@ gem 'simple_form'
 gem 'cancancan', '~> 1.9'
 gem 'datagrid'
 gem 'slim-rails'
+gem 'easy_table'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'

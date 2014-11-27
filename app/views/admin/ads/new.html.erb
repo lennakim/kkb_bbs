@@ -1,1 +1,30 @@
 <%= render "admin/ads/form"%>
+<script type="text/javascript">
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#blah').attr('src', e.target.result);
+            $('#blaz').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#imgInp").change(function(){
+    readURL(this);
+});
+
+function AddElement(mytype){ 
+    var mytype,TemO=document.getElementById("add"); 
+    var newInput = document.createElement("input");  
+    newInput.type=mytype;  
+    newInput.name="options[]"; 
+    newInput.id="option"; 
+    TemO.appendChild(newInput); 
+    var newline= document.createElement("p"); 
+    TemO.appendChild(newline); 
+  } 
+</script>

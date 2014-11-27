@@ -8,7 +8,21 @@
   <p>
   二级标题：<%= f.text_field :sub_title %>
   <p>
-  上传文件：<%= f.file_field :image %>
+  上传文件：<%= f.file_field :image,:id => "imgInp" %>
   <p>
-    <%= f.submit "提交"%>
+    <strong>大图</strong>
+  <p>
+  <%= image_tag "img_up.png",:id => "blah"%>
+  <p>
+  <strong>小图</strong>
+  <p>
+  <%= image_tag "img_up.png",:id => "blaz"%>
+  <p>
+  <strong>状态</strong>
+  <select class="form-control" name="ad[status]">
+    <option value = 0>上线</option>
+    <option value = 1>下线</option>
+  </select>
+    <p>
+    <%= f.submit "提交", class:"btn btn-primary"%>
 <% end %>
