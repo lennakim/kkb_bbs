@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126172017) do
+ActiveRecord::Schema.define(version: 20141128171942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,18 @@ ActiveRecord::Schema.define(version: 20141126172017) do
   add_index "notifications", ["subjectable_id", "subjectable_type"], name: "index_notifications_on_subjectable_id_and_subjectable_type", using: :btree
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
 
+  create_table "reports", force: true do |t|
+    t.integer  "reporter_id"
+    t.integer  "bad_man_id"
+    t.integer  "reportable_id"
+    t.string   "reportable_type"
+    t.text     "body",            default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports", ["reportable_id", "reportable_type"], name: "index_reports_on_reportable_id_and_reportable_type", using: :btree
+
   create_table "topics", force: true do |t|
     t.integer  "user_id"
     t.integer  "node_id"
@@ -127,6 +139,8 @@ ActiveRecord::Schema.define(version: 20141126172017) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.datetime "locked_at"
+    t.boolean  "is_forbid",      default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -22,6 +22,14 @@ class User < ActiveRecord::Base
     false
   end
 
+  def locked?
+
+  end
+
+  def forbidden?
+    is_forbid
+  end
+
   def active? #是否激活
     confirmed.present?
   end
