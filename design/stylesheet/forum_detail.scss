@@ -1,0 +1,353 @@
+@import 'common';
+
+.wrapper{
+	.main{
+		.left{
+			margin-right: 0;
+			.crumbs{
+				color: #666;
+				margin-bottom: 20px;
+				a{
+					color: #666;
+				}
+			}
+			.post-list{
+				dl{
+					overflow: hidden;
+					padding: 20px;
+					border-bottom: 1px solid #ccc;
+					&:last-child{
+						border: 0;
+					}
+					dt,dd{
+						float: left;
+					}
+					dt{
+						width: 15%;
+						text-align: center;
+						color: #b8b8b8;
+						p{
+							font-size: 14px;
+						}
+					}
+					dd{
+						width: 68%;
+						padding-left: 2%;
+					}
+					.post-name{
+						a{
+							color: $font-blue;
+						}
+						.tag-top,.tag-new,.tag-best,.tag-mark{
+							border-radius: 5px;
+							width: 40px;
+							height: 20px;
+							line-height: 20px;
+							text-align: center;
+						}
+						.tag-top,.tag-new{
+							border: 1px solid #ff5454;
+							color: #ff5454;
+						}
+						.tag-best{
+							border: 1px solid #1c9733;
+							color: #1c9733;
+						}
+					}
+					.post-info{
+						color: $font-gray;
+						font-size: 14px;
+						margin-top: 15px;
+						span,var{
+							float: left;
+							margin: 0 5px;
+						}
+					}
+					.con{
+						width: 83%;
+						float: right;
+						padding: 15px 0;
+						color: #666;
+					}
+					.share-to{
+						padding-left: 17%;
+						overflow: hidden;
+						width: 82%;
+						color: #999;
+						a{
+							color: #999;
+						}
+						.share-btn{
+							overflow: hidden;
+							width: 60%;
+							float: left;
+							li{
+								float: left;
+							}
+							.inform{
+								cursor: pointer;
+								cursor: hand;
+							}
+						}
+						.reply-btn{
+							overflow: hidden;
+							width: 30%;
+							float: right;
+							li{
+								float: left;
+								width: 40%;
+								height: 25px;
+								margin: 0 5%;
+								text-align: center;
+								border-radius: 5px;
+								background: #e0e0e0;
+								color: #7a7a7a;
+								img{
+									vertical-align: middle;
+								}
+							}
+						}
+					}
+					.choice{
+						width: 7%;
+						float: right;
+					}
+				}
+				.sofa{
+					width: 94%;
+					dd{
+						width: 82%;
+						color: $font-gray;
+						.time{
+							color: #a1a1a1;
+							margin: 10px 0;
+						}
+					}
+					.reply-con{
+						float: right;
+						width: 83%;
+						.top-btn{
+							overflow: hidden;
+							margin-top: 10px; 
+							line-height: 40px;
+							.inform{
+								color: #a1a1a1;
+								float: left;
+								cursor: pointer;
+								cursor: hand;
+							}
+							.add-btn{
+								width: 30%;
+								height: 40px;
+								line-height: 40px;
+								float: right;
+								text-align: center;
+								li{
+									float: left;
+									width: 50%;
+								}
+								.bac{
+									background: #f6f6f6;
+									border-radius: 5px 5px 0 0;
+								}
+							}
+						}
+						.hidden{
+							display: hidden;
+						}
+						.reply{
+							background: #f6f6f6;
+							width: 100%;
+							.username{
+								color: #000;
+								margin: 10px 0;
+							}
+							.time{
+								float: left;
+								width: 50%;
+								span{
+									margin-right: 20px;
+								}
+							}
+							.reply-btn{
+								float: right;
+								width: 10%;
+								margin: 10px 0;
+								color: #a1a1a1;
+							}
+							.reply-textarea{
+								width: 92%;
+								padding: 0 20px;
+								.top-btn{
+									margin: 10px 0;
+									.others{
+										width: 60%;
+										float: left;
+										.click{
+											color: $bac-blue;
+										}
+									}
+									.reply-host{
+										width: 15%;
+										float: right;
+									}
+								}
+								.textarea{
+									overflow: hidden;
+									textarea{
+										display: block;
+										width: 99%;
+										height: 100px;
+										border-radius: 5px;
+									}
+									.reply-btn{
+										width: 16%;
+										height: 30px;
+										line-height: 30px;
+										text-align: center;
+										border-radius: 5px;
+										color: #fff;
+										background: $bac-blue;
+									}
+								}
+							}
+						}
+					}
+				}
+				.inform-bac{
+					background: #ccc;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 999;
+					opacity: .5;
+				}
+				.hidden{
+					display: none;
+				}
+				.inform-con{
+					background: #fff;
+					width: 470px;
+					position: absolute;
+					top: 200px;
+					left: 250px;
+					z-index: 9999;
+					h3{
+						color: $font-gray;
+						border-bottom: 1px solid #ccc;
+						line-height:60px;
+						text-indent: 1em;
+					}					
+					dl{
+						height: 310px;
+						padding: 20px 30px;
+					}
+					dt{
+						margin-top: -4px;
+						padding:0;
+						width: auto;
+						float:none;
+						text-align: left;
+						p{
+							text-align: left;
+						}
+					}
+					dd{
+						width: 100%;
+						padding: 0;
+						float:none;
+						text-align:left;
+						margin-top: 1.6em;						
+						textarea{
+							width: 100%;
+							height: 120px;
+							border-radius: 5px;
+						}
+						p{	
+							font-size: 14px;
+							color: $font-gray;
+							line-height: 2.5em;
+						}
+					}
+					.username{
+						color: $font-blue;
+					}
+					.btn{
+						margin-top: .9em;
+						cursor: pointer;
+						cursor: hand;
+						span{
+							font-size: 1.2em;
+							color: #fff;
+							line-height: 38px;
+							display: inline-block;
+							width: 124px;
+							border-radius: 5px;
+							text-align: center;
+							margin-right: .3em;
+						}
+						span:first-child{							
+							background-color: $font-blue;
+						}
+						span:last-child{
+							background-color: $font-blue;
+						}
+					}
+				}
+			}
+			.post-reply{
+				margin-top: 20px;
+				background: #fff;
+				dl{
+					overflow: hidden;
+					padding: 20px;
+					dt,dd{
+						float: left;
+					}
+					dt{
+						width: 15%;
+						text-align: center;
+						color: #b8b8b8;
+						p{
+							font-size: 14px;
+						}
+					}
+					dd{
+						width: 82%;
+						padding-left: 2%;
+						textarea{
+							width: 97%;
+							height: 200px;
+							border-radius: 5px;
+						}
+						.post-btn{
+							overflow: hidden;
+							width: 35%;
+							float: right;
+							li{
+								float: left;
+								width: 35%;
+								margin: 10px 5%;
+								padding: 6px 2%;
+								text-align: center;
+								border-radius: 5px;
+								&:nth-child(1){
+									background: #dee0e0;
+									color: $font-gray;
+								}
+								&:nth-child(2){
+									background: $bac-blue;
+									color: #fff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.right{
+			margin-left: 3%;
+			margin-top: 40px;
+		}
+	}
+}
