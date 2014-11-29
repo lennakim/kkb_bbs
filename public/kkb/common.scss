@@ -119,30 +119,10 @@ $bac-orange: #faaa3c;
 				}
 			}
 			.page{
+				width: 40%;
 				float: right;
 				height: 40px;
-				line-height: 40px;
 				margin: 20px 0;
-				overflow: hidden;
-				border-radius: 5px;
-				color: #298be6;
-				border: 1px solid #ccc;
-				li{
-					float: left;
-					width: 40px;
-					text-align: center;
-					border-right: 1px solid #ccc;
-					&:last-child{
-						border: 0;
-					}
-				}
-				.selected{
-					background: #298be6;
-					color: #fff;
-				}
-				.gray{
-					color: #ccc;
-				}
 			}
 		}
 		.right{

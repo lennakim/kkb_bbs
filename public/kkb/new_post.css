@@ -15,114 +15,273 @@ img {
   width: 100%;
   background: #f4f4f4; }
   .wrapper .main {
-    width: 45%;
+    width: 75%;
     margin: 20px auto;
     overflow: hidden;
     position: relative; }
-    .wrapper .main .post-item {
-      width: 100%;
-      margin: 15px 0;
-      overflow: hidden; }
-      .wrapper .main .post-item input {
-        height: 30px;
-        line-height: 30px;
-        border-radius: 3px;
-        padding: 0 10px;
-        color: #555555;
-        border: 1px solid #ccc;
-        font-size: 16px; }
-      .wrapper .main .post-item p {
-        color: #555555; }
-      .wrapper .main .post-item .title {
-        width: 15%;
-        display: block;
-        float: left;
-        text-align: center;
-        color: #555555; }
-      .wrapper .main .post-item .con {
-        width: 80%;
-        float: left; }
-        .wrapper .main .post-item .con .select-title {
-          overflow: hidden; }
-          .wrapper .main .post-item .con .select-title .select, .wrapper .main .post-item .con .select-title .dropdown {
+    .wrapper .main .left, .wrapper .main .right {
+      float: left; }
+    .wrapper .main .left {
+      width: 70%;
+      margin-right: 3%; }
+      .wrapper .main .left .post-list {
+        background: #fff;
+        border-radius: 5px;
+        padding: 10px; }
+        .wrapper .main .left .post-list .title {
+          overflow: hidden;
+          height: 35px;
+          line-height: 35px;
+          color: #555555; }
+          .wrapper .main .left .post-list .title h3 {
             float: left;
-            height: 30px;
-            line-height: 30px;
-            background: #fff;
-            text-align: center; }
-          .wrapper .main .post-item .con .select-title .select {
-            padding: 0 10px;
-            width: 40%;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px; }
-          .wrapper .main .post-item .con .select-title .dropdown {
-            width: 30px;
-            border-top: 1px solid #ccc;
-            border-right: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            cursor: hand; }
-        .wrapper .main .post-item .con .hidden {
+            margin-left: 15px; }
+          .wrapper .main .left .post-list .title .tags {
+            float: right;
+            width: 240px;
+            margin-top: 6px;
+            overflow: hidden; }
+            .wrapper .main .left .post-list .title .tags li {
+              float: left;
+              height: 25px;
+              line-height: 25px;
+              padding: 0 8px;
+              border-radius: 5px; }
+              .wrapper .main .left .post-list .title .tags li:hover {
+                color: #aaa; }
+            .wrapper .main .left .post-list .title .tags .selected {
+              color: #3d85cc; }
+        .wrapper .main .left .post-list .hidden {
           display: none; }
-        .wrapper .main .post-item .con .post-type {
-          line-height: 30px;
-          width: 51%;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          margin-top: 5px;
-          color: #555555;
-          background: #fff; }
-          .wrapper .main .post-item .con .post-type li {
-            padding: 5px 10px; }
-            .wrapper .main .post-item .con .post-type li:hover {
-              background: #288ce6;
-              color: #fff; }
-        .wrapper .main .post-item .con .radios {
-          overflow: hidden; }
-          .wrapper .main .post-item .con .radios span, .wrapper .main .post-item .con .radios input {
-            float: left;
-            height: 30px;
-            line-height: 30px;
-            margin: 0 5px; }
-        .wrapper .main .post-item .con .tips {
-          color: #999;
-          font-size: 14px;
-          margin-top: 5px; }
-        .wrapper .main .post-item .con .vote-title {
-          margin: 10px 0;
-          font-size: 14px; }
-          .wrapper .main .post-item .con .vote-title .text {
-            width: 80px;
-            margin: 0 10px; }
-        .wrapper .main .post-item .con .new-vote {
-          text-decoration: underline;
-          color: #3d85cc;
-          cursor: pointer;
-          cursor: hand; }
-        .wrapper .main .post-item .con .vote-item {
-          overflow: hidden; }
-          .wrapper .main .post-item .con .vote-item input {
-            height: 30px;
-            line-height: 30px;
-            margin: 3px 0;
-            width: 60%;
-            float: left; }
-          .wrapper .main .post-item .con .vote-item .delete {
-            float: left;
-            width: 30px;
-            height: 35px;
-            background: url("image/delete.png") no-repeat;
-            background-position: 0 3px;
-            cursor: pointer;
-            cursor: hand; }
-        .wrapper .main .post-item .con textarea {
-          width: 100%; }
-        .wrapper .main .post-item .con .btn {
-          width: 90px;
+        .wrapper .main .left .post-list .best, .wrapper .main .left .post-list .hot, .wrapper .main .left .post-list .new {
+          overflow: hidden;
+          padding-bottom: 15px; }
+          .wrapper .main .left .post-list .best dl, .wrapper .main .left .post-list .hot dl, .wrapper .main .left .post-list .new dl {
+            overflow: hidden;
+            padding: 20px;
+            border-bottom: 1px dashed #ccc; }
+            .wrapper .main .left .post-list .best dl:hover, .wrapper .main .left .post-list .hot dl:hover, .wrapper .main .left .post-list .new dl:hover {
+              background: #fbfbfb; }
+            .wrapper .main .left .post-list .best dl dt, .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dt, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dt, .wrapper .main .left .post-list .new dl dd {
+              float: left; }
+            .wrapper .main .left .post-list .best dl dt, .wrapper .main .left .post-list .hot dl dt, .wrapper .main .left .post-list .new dl dt {
+              width: 15%; }
+            .wrapper .main .left .post-list .best dl .post-name a, .wrapper .main .left .post-list .hot dl .post-name a, .wrapper .main .left .post-list .new dl .post-name a {
+              color: #3d85cc; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-top, .wrapper .main .left .post-list .best dl .post-name .tag-new, .wrapper .main .left .post-list .best dl .post-name .tag-best, .wrapper .main .left .post-list .best dl .post-name .tag-mark, .wrapper .main .left .post-list .hot dl .post-name .tag-top, .wrapper .main .left .post-list .hot dl .post-name .tag-new, .wrapper .main .left .post-list .hot dl .post-name .tag-best, .wrapper .main .left .post-list .hot dl .post-name .tag-mark, .wrapper .main .left .post-list .new dl .post-name .tag-top, .wrapper .main .left .post-list .new dl .post-name .tag-new, .wrapper .main .left .post-list .new dl .post-name .tag-best, .wrapper .main .left .post-list .new dl .post-name .tag-mark {
+              border-radius: 5px;
+              width: 40px;
+              height: 20px;
+              line-height: 20px;
+              text-align: center; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-top, .wrapper .main .left .post-list .best dl .post-name .tag-new, .wrapper .main .left .post-list .hot dl .post-name .tag-top, .wrapper .main .left .post-list .hot dl .post-name .tag-new, .wrapper .main .left .post-list .new dl .post-name .tag-top, .wrapper .main .left .post-list .new dl .post-name .tag-new {
+              border: 1px solid #ff5454;
+              color: #ff5454; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-best, .wrapper .main .left .post-list .hot dl .post-name .tag-best, .wrapper .main .left .post-list .new dl .post-name .tag-best {
+              border: 1px solid #1c9733;
+              color: #1c9733; }
+            .wrapper .main .left .post-list .best dl .post-info, .wrapper .main .left .post-list .hot dl .post-info, .wrapper .main .left .post-list .new dl .post-info {
+              color: #555555;
+              font-size: 14px;
+              margin-top: 15px; }
+              .wrapper .main .left .post-list .best dl .post-info span, .wrapper .main .left .post-list .best dl .post-info var, .wrapper .main .left .post-list .hot dl .post-info span, .wrapper .main .left .post-list .hot dl .post-info var, .wrapper .main .left .post-list .new dl .post-info span, .wrapper .main .left .post-list .new dl .post-info var {
+                float: left;
+                margin: 0 5px; }
+            .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dd {
+              width: 68%; }
+      .wrapper .main .left .page {
+        width: 40%;
+        float: right;
+        height: 40px;
+        margin: 20px 0; }
+    .wrapper .main .right {
+      width: 27%;
+      position: relative; }
+      .wrapper .main .right .search {
+        width: 99%;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 20px; }
+      .wrapper .main .right .search-bar {
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        border-left: 2px solid #ccc;
+        padding-left: 5px; }
+      .wrapper .main .right .new-topic {
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 20px 0;
+        background: #288ce6;
+        color: #fff;
+        font-size: 20px; }
+      .wrapper .main .right .topic h2, .wrapper .main .right .share h2 {
+        margin: 40px 0 20px; }
+      .wrapper .main .right .topic ul {
+        overflow: hidden; }
+        .wrapper .main .right .topic ul li {
+          width: 48%;
           height: 30px;
           line-height: 30px;
+          color: #555555;
           text-align: center;
-          border-radius: 5px;
+          float: left;
+          margin-bottom: 5px;
+          background: #eeeded;
+          border-radius: 5px; }
+          .wrapper .main .right .topic ul li:hover {
+            background: #288ce6;
+            color: #fff; }
+          .wrapper .main .right .topic ul li:nth-child(odd) {
+            margin-right: 4%; }
+        .wrapper .main .right .topic ul .selected {
           background: #288ce6;
           color: #fff; }
+      .wrapper .main .right .share {
+        margin-bottom: 50px; }
+        .wrapper .main .right .share h2 {
+          margin: 40px 0 20px; }
+        .wrapper .main .right .share dl {
+          border-bottom: 1px dashed #ccc;
+          padding: 8px 0; }
+          .wrapper .main .right .share dl dt a {
+            font-size: 16px;
+            color: #555555; }
+          .wrapper .main .right .share dl dd {
+            font-size: 14px;
+            color: #adadad; }
+    .wrapper .main .sidebar {
+      position: fixed;
+      top: 200px;
+      right: 25px; }
+      .wrapper .main .sidebar dl {
+        overflow: hidden;
+        width: 110px;
+        height: 55px;
+        color: #555555;
+        margin-bottom: 5px; }
+        .wrapper .main .sidebar dl dt, .wrapper .main .sidebar dl dd {
+          padding: 5%;
+          margin-right: 5px;
+          width: 35%;
+          text-align: center;
+          float: left; }
+        .wrapper .main .sidebar dl dt {
+          background: #fff;
+          line-height: 60px; }
+        .wrapper .main .sidebar dl dd {
+          background: #288ce6;
+          color: #fff;
+          display: none; }
+
+.wrapper .main {
+  width: 45%; }
+  .wrapper .main .post-item {
+    width: 100%;
+    margin: 15px 0;
+    overflow: hidden; }
+    .wrapper .main .post-item input {
+      height: 30px;
+      line-height: 30px;
+      border-radius: 3px;
+      padding: 0 10px;
+      color: #555555;
+      border: 1px solid #ccc;
+      font-size: 16px; }
+    .wrapper .main .post-item p {
+      color: #555555; }
+    .wrapper .main .post-item .title {
+      width: 15%;
+      display: block;
+      float: left;
+      text-align: center;
+      color: #555555; }
+    .wrapper .main .post-item .con {
+      width: 80%;
+      float: left; }
+      .wrapper .main .post-item .con .select-title {
+        overflow: hidden; }
+        .wrapper .main .post-item .con .select-title .select, .wrapper .main .post-item .con .select-title .dropdown {
+          float: left;
+          height: 30px;
+          line-height: 30px;
+          background: #fff;
+          text-align: center; }
+        .wrapper .main .post-item .con .select-title .select {
+          padding: 0 10px;
+          width: 40%;
+          border: 1px solid #ccc;
+          border-radius: 5px 0 0 5px; }
+        .wrapper .main .post-item .con .select-title .dropdown {
+          width: 30px;
+          border-top: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+          border-radius: 0 5px 5px 0;
+          cursor: pointer;
+          cursor: hand; }
+      .wrapper .main .post-item .con .hidden {
+        display: none; }
+      .wrapper .main .post-item .con .post-type {
+        line-height: 30px;
+        width: 51%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+        color: #555555;
+        background: #fff; }
+        .wrapper .main .post-item .con .post-type li {
+          padding: 5px 10px; }
+          .wrapper .main .post-item .con .post-type li:hover {
+            background: #288ce6;
+            color: #fff; }
+      .wrapper .main .post-item .con .radios {
+        overflow: hidden; }
+        .wrapper .main .post-item .con .radios span, .wrapper .main .post-item .con .radios input {
+          float: left;
+          height: 30px;
+          line-height: 30px;
+          margin: 0 5px; }
+      .wrapper .main .post-item .con .tips {
+        color: #999;
+        font-size: 14px;
+        margin-top: 5px; }
+      .wrapper .main .post-item .con .vote-title {
+        margin: 10px 0;
+        font-size: 14px; }
+        .wrapper .main .post-item .con .vote-title .text {
+          width: 80px;
+          margin: 0 10px; }
+      .wrapper .main .post-item .con .new-vote {
+        text-decoration: underline;
+        color: #3d85cc;
+        cursor: pointer;
+        cursor: hand; }
+      .wrapper .main .post-item .con .vote-item {
+        overflow: hidden; }
+        .wrapper .main .post-item .con .vote-item input {
+          height: 30px;
+          line-height: 30px;
+          margin: 3px 0;
+          width: 60%;
+          float: left; }
+        .wrapper .main .post-item .con .vote-item .delete {
+          float: left;
+          width: 30px;
+          height: 35px;
+          background: url("image/delete.png") no-repeat;
+          background-position: 0 3px;
+          cursor: pointer;
+          cursor: hand; }
+      .wrapper .main .post-item .con textarea {
+        width: 100%; }
+      .wrapper .main .post-item .con .btn {
+        width: 90px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        background: #288ce6;
+        color: #fff; }

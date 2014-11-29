@@ -31,7 +31,7 @@
 						}
 					}
 					dd{
-						width: 68%;
+						width: 75%;
 						padding-left: 2%;
 					}
 					.post-name{
@@ -64,8 +64,9 @@
 						}
 					}
 					.con{
-						width: 83%;
-						float: right;
+						width: 80%;
+						float: left;
+						margin-left: 17%;
 						padding: 15px 0;
 						color: #666;
 					}
@@ -113,8 +114,37 @@
 						float: right;
 					}
 				}
-				.sofa{
+				.reply-list{
+					position: relative;
 					width: 94%;
+					.storey{
+						border-radius: 10px 0 0 10px;
+						position: absolute;
+						top: 15px;
+						right: 0;
+						width: 70px;
+						height: 30px;
+						line-height: 30px;
+						text-align: center;
+					}
+					.sofa{
+						background: #ffe7e7;
+						color: #d14b4b;
+						box-shadow: -2px 2px 0 #f3caca; 
+					}
+					.bench{
+						background: #feeed9;
+						color: #e9722a;
+						box-shadow: -2px 2px 0 #edd0aa; 
+					}
+					.floor{
+						background: #f9faca;
+						color: #c9a868;
+						box-shadow: -2px 2px 0 #dbdc9c; 
+					}
+					.num{
+						color: #de9404;
+					}
 					dd{
 						width: 82%;
 						color: $font-gray;
