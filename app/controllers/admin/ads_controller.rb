@@ -2,7 +2,12 @@ class Admin::AdsController < Admin::BaseController
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
   def index
     @q = Ad.search(params[:q])
-    @ads = @q.result
+    if params[:q] != nil
+      @ads = @q.result  
+    else
+      @ads = Ad.where(:ad_type => "ads").page(params[:page])
+    end
+    
   end
 
   def new
@@ -11,7 +16,7 @@ class Admin::AdsController < Admin::BaseController
 
   def create
     @ad = Ad.new(ad_params)
-    @ad.ad_type = "carousel"
+    @ad.ad_type = "ads"
     if @ad.save
       redirect_to admin_ad_path(@ad)
     else

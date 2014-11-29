@@ -1,0 +1,20 @@
+<h3>节点管理</h3>
+<hr>
+<%= search_form_for [:admin,@q] do |f| %>
+   <strong>节点名称</strong>
+   <p>
+   <%= f.search_field :title_cont %>
+   <%= f.submit "搜索",class:"btn btn-primary" %>
+   </p>
+   <p>
+   <%= link_to "新建", new_admin_node_path, class:"btn btn-info"  %>
+   </p>
+<% end %>
+<%= table_for(@nodes, class: 'table table-bordered') do |t|%>
+  <% t.column :title, "名称"%>
+  <% t.column :actions, "操作" do |ad|%>
+    <%= link_to "更新", edit_admin_node_path(ad)%>
+    <%= link_to "查看", admin_node_path(ad)%>
+    <%= link_to "删除", admin_node_path(ad), :method => :delete%>
+  <% end %>
+<% end %>

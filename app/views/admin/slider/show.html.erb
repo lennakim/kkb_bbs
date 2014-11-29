@@ -1,0 +1,11 @@
+内部别名：<%= @slider.alise_title%>
+<p>
+  URL：<%= @slider.url%>
+<p>
+  一级题目：<%= @slider.title%>
+<p>
+  二级题目<%= @slider.sub_title%>
+<p>
+  图片：
+<p>
+  <%= image_tag(@slider.image_url) if @slider.image? %>
