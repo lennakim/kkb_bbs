@@ -6,7 +6,7 @@ bbs
 
 ### 项目
 
-[kkb_bbs](http://101.66.251.223/)
+[kkb_bbs](http://kkb.shooter.gl/)
 
 __账户名__ kkb_bbs  __密码__ secret
 
@@ -20,4 +20,4 @@ super_admin 设定在 application.yml中
 
 #### rake
 
-`rake db:create RAILS_ENV=production && rake db:seed RAILS_ENV=production && `
+`rake db:create RAILS_ENV=production && rake db:seed RAILS_ENV=production`
