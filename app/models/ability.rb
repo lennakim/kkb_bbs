@@ -7,7 +7,7 @@ class Ability
 
     @user = user
     @user ||= User.new
-    user_can
+    user_can if user.normal?
   end
 
   def admin_can #超级管理员

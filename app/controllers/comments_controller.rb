@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :login_required
+  before_action :login_required, :no_locked_required
   before_action :find_commentable
 
   def create
@@ -27,13 +27,6 @@ class CommentsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @comment = @commentable.comments.find(params[:id])
-    @comment.destroy
-
-    redirect_to @commentable
   end
 
   def trash
