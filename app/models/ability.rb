@@ -7,10 +7,14 @@ class Ability
 
     @user = user
     @user ||= User.new
-    user_can if user.normal?
+    user_can
   end
 
-  def admin_can #超级管理员
+  def super_admin_can #超级管理员
+    can :manage, :all
+  end
+
+  def admin_can
     can :manage, :all
   end
 
@@ -19,19 +23,15 @@ class Ability
 
     can :rw, Topic
     can :modify, Topic do |topic|
-      topic.user == @user
+      topic.user == @user && @user.normal?
     end
 
     can :rw, Comment
     can :modify, Comment do |comment|
-      comment.user == @user
+      comment.user == @user && @user.normal?
     end
 
     cannot :manage, Node
-  end
-
-  def guest_can
-    cannot :manage, :all
   end
 
   def account_modify_authority

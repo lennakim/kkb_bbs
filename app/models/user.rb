@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include UserManage
 
   LOCK_TIME = 3.day #封禁时间
 
@@ -13,40 +14,12 @@ class User < ActiveRecord::Base
     User.where('lower(email) = ? or lower(name) = ?', login, login).first
   end
 
-  def self.super_admin
-    User.find_by(email: Settings.super_admin)
-  end
-
   def unread_notifications
     notifications.unread.recent
   end
 
   def read_notifications
     notifications.had_read.recent
-  end
-
-  def s_admin?
-    self == User.super_admin
-  end
-
-  def admin?
-    role == 'admin'
-  end
-
-  def normal? #是否正常
-    (!locked?) and (!forbidden?)
-  end
-
-  def locked? #是否禁言
-    locked_at.present? and ((locked_at + LOCK_TIME) < Time.now)
-  end
-
-  def forbidden? #是否拉黑
-    is_forbid
-  end
-
-  def active? #是否激活
-    confirmed.present?
   end
 
 end
