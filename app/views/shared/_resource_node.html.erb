@@ -1,0 +1,7 @@
+<h2>资源分享</h2>
+<% Node.resource_node.each do |t| %>
+  <dl>
+    <dt><%= link_to t.title, t %></dt>
+    <dd>作者：<%= t.user.name %></dd>
+  </dl>
+<% end %>
