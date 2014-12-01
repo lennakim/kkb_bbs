@@ -14,31 +14,17 @@
             </div>
           </div>
         </div>
-        <div class="post-item">
-          <span class="title">关键字</span>
-          <div class="con">
-            <input type="text">
-            <p class="tips">输入帖子内容的关键字，以“；”分开</p>
-          </div>
-        </div>
-        <div class="post-item">
-          <span class="title">投票</span>
-          <div class="con">
-            <div class="radios">
-              <input type="radio" value="是" /> <span>是</span>
-              <input type="radio" value="否" /> <span>否</span>
+
+        <% if is_admin? %>
+          <div class="post-item">
+            <span class="title">关键字</span>
+            <div class="con">
+              <input type="text">
+              <p class="tips">输入帖子内容的关键字，以“；”分开</p>
             </div>
-            <p class="vote-title">1、选项：最多可填写50个选项</p>
-            <ul class="vote-item">
-              <li><input type="text"><var class="delete"></var></li>
-              <li><input type="text"><var class="delete"></var></li>
-            </ul>
-            <p class="vote-title new-vote">新增选项</p>
-            <p class="vote-title">2、最多可选<input class="text" type="text">项</p>
-            <p class="vote-title">3、投票有效期<input class="text" type="text"></p>
-            <p class="tips">截止到有效期日24:00</p>
           </div>
-        </div>
+        <% end %>
+
         <div class="post-item">
           <span class="title">帖子内容</span>
           <div class="con">
