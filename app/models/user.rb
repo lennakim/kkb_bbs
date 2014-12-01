@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+  LOCK_TIME = 3.day #封禁时间
+
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :delete_all
@@ -22,11 +25,15 @@ class User < ActiveRecord::Base
     false
   end
 
-  def locked?
-
+  def normal? #是否正常
+    (!locked?) and (!forbidden?)
   end
 
-  def forbidden?
+  def locked? #是否禁言
+    locked_at.present? and ((locked_at + LOCK_TIME) < Time.now)
+  end
+
+  def forbidden? #是否拉黑
     is_forbid
   end
 
