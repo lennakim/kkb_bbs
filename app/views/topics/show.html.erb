@@ -55,7 +55,8 @@
               </ul>
             </dd>
           </dl>
-          <dl class="sofa">
+          <dl class="reply-list">
+            <p class="storey sofa">沙发</p>
             <% if @first_comment.present? %>
               <% if can? :trash, @first_comment %>
                 <%= link_to "删除评论", trash_comment_path(@first_comment), method: :delete, data: { confirm: "确定删除？" } %>
