@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
     User.where('lower(email) = ? or lower(name) = ?', login, login).first
   end
 
+  def self.super_admin
+    User.find_by(email: Settings.super_admin)
+  end
+
   def unread_notifications
     notifications.unread.recent
   end
@@ -21,8 +25,12 @@ class User < ActiveRecord::Base
     notifications.had_read.recent
   end
 
+  def s_admin?
+    self == User.super_admin
+  end
+
   def admin?
-    false
+    role == 'admin'
   end
 
   def normal? #是否正常
