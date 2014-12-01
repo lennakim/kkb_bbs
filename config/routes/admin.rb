@@ -17,5 +17,11 @@ namespace :admin do
     end
   end
 
+  resources :users do
+    collection do
+      match 'search' => 'users#search', via: [:get, :post], as: :search
+    end
+  end
+
   root "dashboard#index", as: :dashboard
 end

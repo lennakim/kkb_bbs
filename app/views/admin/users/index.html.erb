@@ -1,0 +1,34 @@
+<h3>用户管理</h3>
+<hr>
+<%= search_form_for [:admin,@q] do |f| %>
+   <strong>用户名</strong>
+   <p>
+   <%= f.search_field :name_cont %>
+   <%= f.submit "搜索",class:"btn btn-primary" %>
+   </p>
+  <strong>电子邮件</strong>
+   <p>
+   <%= f.search_field :email_cont %>
+   <%= f.submit "搜索",class:"btn btn-primary" %>
+   </p>
+   <p>
+<% end %>
+<%= table_for(@users, class: 'table table-bordered') do |t|%>
+  <% t.column :email, "电子邮件"%>
+  <% t.column :name, "用户名"%>
+  <% t.column :toics_count, "帖子数" do |user|%>
+    <%= user.topics.count%>
+  <% end %>
+  <% t.column :comments_count, "回复数" do |user|%>
+    <%= user.comments.count%>
+  <% end %>
+
+  <% t.column :actions, "操作" do |ad|%>
+    <%if ad.forbidden? %>
+      <%= link_to "移除黑名单", edit_admin_user_path(ad)%>
+    <% else %>
+      <%= link_to "加入黑名单", edit_admin_user_path(ad)%>
+    <% end %>
+    <%= link_to "查看", admin_user_path(ad)%>
+  <% end %>
+<% end %>

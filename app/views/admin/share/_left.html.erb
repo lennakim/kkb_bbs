@@ -9,6 +9,12 @@
     <%= link_to "节点管理", admin_nodes_path%>
   </li>
   <li class="list-group-item">
+    <%= link_to "用户管理", admin_users_path%>
+  </li>
+  <li class="list-group-item">
+    <%= link_to "黑名单用户", admin_users_path(:group => "black")%>
+  </li>
+  <li class="list-group-item">
     帖子管理
   </li>
   <li class="list-group-item">
