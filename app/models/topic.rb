@@ -5,6 +5,8 @@ class Topic < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
 
   scope :recent, -> {order(created_at: :desc)}
+  scope :hot, -> {where("topics.comments_count >= ?", 50 )}
+  scope :timeliness, -> {where(created_at: 1.month.ago..Time.now)} #时效性
 
   belongs_to :user, counter_cache: true, touch: true
   belongs_to :node, counter_cache: true, touch: true
@@ -14,6 +16,12 @@ class Topic < ActiveRecord::Base
   after_trash   :decrement_counter_cache
   after_restore :increment_counter_cache
   after_destroy :increment_counter_cache, if: :trashed?
+
+  class << self
+    def excellent #精华帖
+
+    end
+  end
 
   def increment_counter_cache
     if node.has_attribute? :topics_count

@@ -1,0 +1,41 @@
+           <% @topics.each do |topic|%>
+              <dl>
+                <dt>
+                  <%= image_tag "head-img.gif" %>
+                </dt>
+                <dd class="post-name">
+                  <span class="tag-top">置顶</span>
+                  <span><%= link_to topic.title, topic_path(topic)%></span>
+                  <span class="tag-new">NEW</span>
+                  <span class="tag-best">精华</span>
+                  <span class="tag-mark">
+                    <%= image_tag "mark.gif" %>
+                  </span>
+                </dd>
+                <dd class="post-info">
+                  <span><%= topic.user.name %></span><var>·</var>
+                  <span><%= format_datetime(topic.created_at) %></span>
+                  <var>·</var>
+                  <span><%= topic.node.title %></span><var>·</var>
+                  <span>0浏览</span><var>·</var>
+                  <span><%= topic.comments_count %>回复</span>
+                </dd>
+                <% if is_admin? %>
+                <dd class="choice">
+                  <input name="check" type="checkbox">
+                </dd>
+                <% end %>
+              </dl>
+            <% end %>
+            <!--  -->
+            <% if is_admin? %>
+              <div class="edit">
+                <p class="choice">
+                  <input class="check-all" type="checkbox">
+                  <span>全选</span>
+                </p>
+                <ul class="edit">
+                  <li>删除帖子</li>
+                </ul>
+              </div>
+            <% end %>
