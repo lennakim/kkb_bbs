@@ -24,11 +24,6 @@ img {
     .wrapper .main .left {
       width: 70%;
       margin-right: 3%; }
-      .wrapper .main .left .crumbs {
-        color: #666;
-        margin-bottom: 20px; }
-        .wrapper .main .left .crumbs a {
-          color: #666; }
       .wrapper .main .left .post-list {
         background: #fff;
         border-radius: 5px;
@@ -53,8 +48,9 @@ img {
               padding: 0 8px;
               border-radius: 5px; }
               .wrapper .main .left .post-list .title .tags li:hover {
-                background: #288ce6;
-                color: #fff; }
+                color: #aaa; }
+            .wrapper .main .left .post-list .title .tags .selected {
+              color: #3d85cc; }
         .wrapper .main .left .post-list .hidden {
           display: none; }
         .wrapper .main .left .post-list .best, .wrapper .main .left .post-list .hot, .wrapper .main .left .post-list .new {
@@ -93,8 +89,6 @@ img {
                 margin: 0 5px; }
             .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dd {
               width: 68%; }
-          .wrapper .main .left .post-list .best .border-bottom, .wrapper .main .left .post-list .hot .border-bottom, .wrapper .main .left .post-list .new .border-bottom {
-            border-bottom: 1px dashed #fbfbfb; }
       .wrapper .main .left .page {
         width: 40%;
         float: right;
@@ -102,8 +96,7 @@ img {
         margin: 20px 0; }
     .wrapper .main .right {
       width: 27%;
-      position: relative;
-      margin-top: 40px; }
+      position: relative; }
       .wrapper .main .right .search {
         width: 99%;
         height: 40px;
@@ -143,6 +136,9 @@ img {
             color: #fff; }
           .wrapper .main .right .topic ul li:nth-child(odd) {
             margin-right: 4%; }
+        .wrapper .main .right .topic ul .selected {
+          background: #288ce6;
+          color: #fff; }
       .wrapper .main .right .share {
         margin-bottom: 50px; }
         .wrapper .main .right .share h2 {
@@ -150,7 +146,7 @@ img {
         .wrapper .main .right .share dl {
           border-bottom: 1px dashed #ccc;
           padding: 8px 0; }
-          .wrapper .main .right .share dl dt {
+          .wrapper .main .right .share dl dt a {
             font-size: 16px;
             color: #555555; }
           .wrapper .main .right .share dl dd {
@@ -176,4 +172,14 @@ img {
           background: #fff;
           line-height: 60px; }
         .wrapper .main .sidebar dl dd {
-          background: #999; }
+          background: #288ce6;
+          color: #fff;
+          display: none; }
+
+.wrapper .main .left .crumbs {
+  color: #666;
+  margin-bottom: 20px; }
+  .wrapper .main .left .crumbs a {
+    color: #666; }
+.wrapper .main .left .post-list .best .border-bottom, .wrapper .main .left .post-list .hot .border-bottom, .wrapper .main .left .post-list .new .border-bottom {
+  border-bottom: 1px dashed #fbfbfb; }
