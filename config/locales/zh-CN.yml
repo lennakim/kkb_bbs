@@ -16,8 +16,10 @@ zh-CN:
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
   datagrid:
+    no_results: 没数据
     empty: 没有任何数据查询结果
     filters:
+      title: "标题"
       date:
         range_separator: " ~ "
       datetime:
@@ -29,3 +31,8 @@ zh-CN:
       order:
         asc: "&uarr;"
         desc: "&darr;"
+    admin_topics_grid:
+      filters:
+        title: "标题"
+      columns:
+        title: "标题"

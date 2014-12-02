@@ -1,10 +1,16 @@
 class TopicsGrid
   include Datagrid
   scope do
-    Topic
+    Topic.includes(:user).merge(Topic.joins(:user))
   end
   filter :id
-  filter :title
+  filter :title 
+  filter :name do |value|
+    where('users.username like ?', "%#{value}%")
+  end
+  filter :eamil do |value|
+    where('users.email like ?', "%#{value}%")
+  end
 
   column :id
   column :title

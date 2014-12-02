@@ -1,5 +1,6 @@
 namespace :admin do
   resources :topics
+  get '/topic/recycle' => 'topics#add_to_recycle'
 
   resources :ads do
     collection do
