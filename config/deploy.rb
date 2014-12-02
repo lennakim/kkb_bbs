@@ -21,6 +21,7 @@ set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/unicorn.pid" }
 set :shared_paths, [
   'config/database.yml',
   'config/secrets.yml',
+  'config/application.yml',
   'public/uploads',
   'log',
   'tmp'
@@ -45,6 +46,7 @@ task setup: :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/database.yml"]
   queue! %[touch "#{deploy_to}/shared/config/secrets.yml"]
+  queue! %[touch "#{deploy_to}/shared/config/application.yml"]
 end
 
 desc "Deploys the current version to the server."

@@ -6,19 +6,18 @@ bbs
 
 ### 项目
 
-[kkb_bbs](http://101.66.251.223/)
+[kkb_bbs](http://kkb.shooter.gl/)
 
 __账户名__ kkb_bbs  __密码__ secret
 
+### 运行项目
 
-修改 hosts 文件
+#### application.yml
 
+`cp /config/application.yml.example /config/application.yml`
 
-```
-sudo vim /etc/hosts
+super_admin 设定在 application.yml中
 
-101.66.251.223   kkb.dev
+#### rake
 
-```
-
-访问 http://kkb.dev/ 即可
+`rake db:create RAILS_ENV=production && rake db:seed RAILS_ENV=production`

@@ -1,7 +1,9 @@
 development:
   cas_base_url: 'https://passport-test.kaikeba.com'
   cas_service_url: 'http://0.0.0.0:3000/service'
+  super_admin: 'liuningtw@163.com'
 
 production:
   cas_base_url: 'https://passport-test.kaikeba.com'
   cas_service_url: 'http://kkb.shooter.gl/service'
+  super_admin: 'liuningtw@163.com'

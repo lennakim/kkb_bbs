@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include UserManage
+
+  LOCK_TIME = 3.day #封禁时间
+
   has_many :topics, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :delete_all
@@ -16,22 +20,6 @@ class User < ActiveRecord::Base
 
   def read_notifications
     notifications.had_read.recent
-  end
-
-  def admin?
-    false
-  end
-
-  def locked?
-
-  end
-
-  def forbidden?
-    is_forbid
-  end
-
-  def active? #是否激活
-    confirmed.present?
   end
 
 end

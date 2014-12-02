@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   load_and_authorize_resource
 
   before_action :node_list
-  before_action :login_required, except: [:index, :show, :search]
+  before_action :login_required, :no_locked_required, except: [:index, :show, :search]
   before_action :set_topic, except: [:index, :new, :create, :search]
 
 # 未添加权限
