@@ -15,12 +15,9 @@
     <%= link_to "黑名单用户", admin_users_path(:group => "black")%>
   </li>
   <li class="list-group-item">
-    帖子管理
+    <%= link_to "帖子管理", admin_topics_path %>
   </li>
   <li class="list-group-item">
-    用户管理
-  </li>
-  <li class="list-group-item">
-    节点管理
+    <%= link_to "帖子回收站", admin_recycle_list_path %>
   </li>
 </ul>

@@ -1,0 +1,4 @@
+<h3>帖子回收站</h3>
+<hr>
+<%= render "/shared/filter", form_target: @recycle_topic, :method => :get, :url => admin_topics_path, html: {:class => 'form-inline'} %>
+<%= datagrid_table @recycle_topic, @assets, html: {:class => 'table table-bordered'}  %>

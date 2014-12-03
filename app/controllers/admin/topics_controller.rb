@@ -6,15 +6,37 @@ class Admin::TopicsController < Admin::BaseController
   end
 
   def show
-    @comments = @topic.comments
+    if @topic.is_trashed == false
+      @comments = @topic.comments  
+    end
+  end
+
+  def recycle_topic
+    @recycle_topic = RecycleTopicGrid.new(params[:recycle_topic_grid])
+    @assets = @recycle_topic.assets.page(params[:page])
   end
 
   def add_to_recycle
-    @topic.update(:is_trashed => true)
-    if @topic.save
-      redirect_to admin_topics_path
+    if @topic != nil
+      @topic.update(:is_trashed => true)  
+      @a = 0
     else
-      redirect_to admin_topics_path
+      @topic = Topic.with_trashed.find(params[:id])
+      @topic.update(:is_trashed => false)  
+      @a = 1
+    end
+    if @topic.save
+      if @a == 0
+        redirect_to admin_topics_path  
+      else
+        redirect_to admin_recycle_list_path
+      end
+    else
+      if @a == 1
+        redirect_to admin_topics_path  
+      else
+        redirect_to admin_recycle_list_path
+      end
     end
   end
 

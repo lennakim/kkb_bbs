@@ -1,3 +1,6 @@
 = link_to "详情", admin_topic_path(topic)
 = ' | '
-= link_to "移到回收站", admin_topic_recycle_path(:id => topic)
+- if topic.is_trashed  
+  = link_to "帖子还原", admin_topic_recycle_path(:id => topic)
+- else
+  = link_to "移到回收站", admin_topic_recycle_path(:id => topic)
