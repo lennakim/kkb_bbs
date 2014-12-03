@@ -6,8 +6,10 @@ class Admin::TopicsController < Admin::BaseController
   end
 
   def show
-    if @topic.is_trashed == false
+    if @topic != nil
       @comments = @topic.comments  
+    else
+      @topic = Topic.with_trashed.find(params[:id])
     end
   end
 
