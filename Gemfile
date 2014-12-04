@@ -23,6 +23,7 @@ gem 'datagrid'
 gem 'easy_table'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'slim-rails'
+gem 'social-share-button' #share
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'

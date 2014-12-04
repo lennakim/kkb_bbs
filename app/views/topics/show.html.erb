@@ -43,14 +43,7 @@
             <dd class="share-to">
               <ul class="share-btn">
                 <li>分享到：</li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
-                <li><a href=""><img src="" alt=""></a></li>
+                <%= social_share_button_tag(@topic.title, url: request.fullpath) %>
                 <li><a href="">举报</a></li>
               </ul>
               <ul class="reply-btn">

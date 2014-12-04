@@ -1,8 +1,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require kindeditor
+//= require social-share-button
 //= require_tree .
-
 
 $(document).ready(function(){
   // search
