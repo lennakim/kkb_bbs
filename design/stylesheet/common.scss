@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 }
-ul{	
+ul{
 	list-style: none;
 }
 a{
@@ -12,11 +12,12 @@ img{
 	border: 0;
 }
 $font-gray: #555;
-$font-blue: #3d85cc;
+$font-blue: #308ee3; //#3d85cc
 $bac-blue: #288ce6;
-$bac-gray: #eeeded;
+$bac-gray: #F4F4F4; //#eeeded;
 $bac-deep-blue: #18222d;
 $bac-orange: #faaa3c;
+
 .wrapper{
 	width: 100%;
 	background: #f4f4f4;
@@ -31,22 +32,17 @@ $bac-orange: #faaa3c;
 		.left{
 			width: 70%;
 			margin-right: 3%;
-			.crumbs{
-				color: #666;
-				margin-bottom: 20px;
-				a{
-					color: #666;
-				}
-			}
 			.post-list{
 				background: #fff;
 				border-radius: 5px;
 				padding: 10px;
 				.title{
 					overflow: hidden;
-					height: 35px;
+					height: 45px;
 					line-height: 35px;
 					color: $font-gray;
+					border-bottom: 1px solid #d0d0d0;
+
 					h3{
 						float: left;
 						margin-left: 15px;
@@ -63,8 +59,14 @@ $bac-orange: #faaa3c;
 							padding: 0 8px;
 							border-radius: 5px;
 							&:hover{
-								background: $bac-blue;
-								color: #fff;
+								background-color: #EEEDED;
+							}
+						}
+						.selected{
+							background-color: $font-blue;
+							color: #fff;
+							&:hover{
+								background-color: $font-blue;
 							}
 						}
 					}
@@ -121,26 +123,42 @@ $bac-orange: #faaa3c;
 							width: 68%;
 						}
 					}
-					.border-bottom{
-						border-bottom: 1px dashed #fbfbfb
-					}
 				}
 			}
 			.page{
-				width: 40%;
 				float: right;
 				height: 40px;
+				line-height: 40px;
 				margin: 20px 0;
+				overflow: hidden;
+				border-radius: 5px;
+				color: #298be6;
+				border: 1px solid #ccc;
+				li{
+					float: left;
+					width: 40px;
+					text-align: center;
+					border-right: 1px solid #ccc;
+					&:last-child{
+						border: 0;
+					}
+				}
+				.selected{
+					background: #298be6;
+					color: #fff;
+				}
+				.gray{
+					color: #ccc;
+				}
 			}
 		}
 		.right{
 			width: 27%;
 			position: relative;
-			margin-top: 40px;
 			.search{
 				width: 99%;
 				height: 40px;
-				border-radius: 5px;
+				border-radius: 4px;
 				font-size: 20px;
 			}
 			.search-bar{
@@ -186,6 +204,10 @@ $bac-orange: #faaa3c;
 							margin-right: 4%;
 						}
 					}
+					.selected{
+						background: $bac-blue;
+						color: #fff;
+					}
 				}
 			}
 			.share{
@@ -197,8 +219,10 @@ $bac-orange: #faaa3c;
 					border-bottom: 1px dashed #ccc;
 					padding: 8px 0;
 					dt{
-						font-size: 16px;
-						color: $font-gray;
+						a{
+							font-size: 16px;
+							color: $font-gray;
+						}
 					}
 					dd{
 						font-size: 14px;
@@ -229,8 +253,9 @@ $bac-orange: #faaa3c;
 					line-height: 60px;
 				}
 				dd{
-					background: #999;
-					
+					background: $bac-blue;
+					color: #fff;
+					display: none;
 				}
 			}
 		}
