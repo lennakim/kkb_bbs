@@ -2,6 +2,8 @@ namespace :admin do
   resources :topics
   get '/topic/recycle' => 'topics#add_to_recycle'
   get '/recycle_list' => 'topics#recycle_topic'
+  get '/topic/topic_top' => 'topics#recycle_topic'
+  get '/topic/topic_good' => 'topics#recycle_topic'
 
   resources :ads do
     collection do

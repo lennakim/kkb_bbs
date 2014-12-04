@@ -4,10 +4,14 @@
                   <%= image_tag "head-img.gif" %>
                 </dt>
                 <dd class="post-name">
+                  <% if topic.level == 4%>
                   <span class="tag-top">置顶</span>
+                  <% end %>
                   <span><%= link_to topic.title, topic_path(topic)%></span>
                   <span class="tag-new">NEW</span>
-                  <span class="tag-best">精华</span>
+                  <% if topic.level == 3%>
+                    <span class="tag-best">精华</span>
+                  <% end %>
                   <span class="tag-mark">
                     <%= image_tag "mark.gif" %>
                   </span>

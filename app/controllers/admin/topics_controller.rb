@@ -1,5 +1,5 @@
 class Admin::TopicsController < Admin::BaseController
-  before_action :find_topic, only: [:show, :edit, :update, :add_to_recycle]
+  before_action :find_topic, only: [:show, :edit, :update, :add_to_recycle, :set_top]
   def index
     @admin_topics_grid = TopicsGrid.new(params[:topics_grid])
     @assets = @admin_topics_grid.assets.page(params[:page])
@@ -39,6 +39,22 @@ class Admin::TopicsController < Admin::BaseController
       else
         redirect_to admin_recycle_list_path
       end
+    end
+  end
+
+  def topic_top
+    if @topic.level != 4
+      @topic.update(:level => 4)  
+    else
+      @topic.update(:level => nil)  
+    end
+  end
+
+  def topic_good
+    if @topic.level != 3
+      @topic.update(:level => 3)  
+    else
+      @topic.update(:level => nil)  
     end
   end
 

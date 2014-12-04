@@ -1,5 +1,15 @@
 = link_to "详情", admin_topic_path(topic)
 = ' | '
+- if topic.level == 4  
+  = link_to "取消置顶", admin_topic_topic_top_path(:id => topic)
+- else
+  = link_to "置顶", admin_topic_topic_top_path(:id => topic)
+= ' | '
+- if topic.level == 3  
+  = link_to "取消加精", admin_topic_topic_good_path(:id => topic)
+- else
+  = link_to "加精", admin_topic_topic_good_path(:id => topic)
+= ' | '
 - if topic.is_trashed  
   = link_to "帖子还原", admin_topic_recycle_path(:id => topic)
 - else
