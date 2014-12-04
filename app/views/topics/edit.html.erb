@@ -1,8 +1,4 @@
-<p>更新帖子</p>
-<%= form_for @topic do |f|%>
-  标题：<%= f.text_field :title %>
-  <p></p>
-  内容：<%= f.kindeditor :body, :window_onload => true %>
-
-  <%= f.submit "发表"%>
-<% end %>
+<link rel="stylesheet" href="/kkb/new_post.css">
+<div class="main">
+  <%= render 'form' %>
+</div>

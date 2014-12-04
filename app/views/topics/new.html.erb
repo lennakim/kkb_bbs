@@ -1,36 +1,4 @@
-  <link rel="stylesheet" href="/kkb/new_post.css">
-    <div class="main">
-      <%= form_for @topic do |f|%>
-        <h3>发布新帖</h3>
-        <div class="post-item">
-          <span class="title">标题</span>
-          <%= f.text_field :title, class: :con, placeholder: "请输入帖子标题"  %>
-        </div>
-        <div class="post-item">
-          <span class="title">帖子分类</span>
-          <div class="con">
-            <div class="select-title">
-              <%= f.select :node_id,Node.all.map { |c| [c.title, c.id] }%>
-            </div>
-          </div>
-        </div>
-
-        <% if is_admin? %>
-          <div class="post-item">
-            <span class="title">关键字</span>
-            <div class="con">
-              <input type="text">
-              <p class="tips">输入帖子内容的关键字，以“；”分开</p>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="post-item">
-          <span class="title">帖子内容</span>
-          <div class="con">
-            <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
-              <%= f.submit "发布新帖", class:"btn"%>
-          </div>
-        </div>
-      <% end %>
-    </div>
+<link rel="stylesheet" href="/kkb/new_post.css">
+<div class="main">
+  <%= render 'form' %>
+</div>

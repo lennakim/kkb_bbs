@@ -1,3 +1,11 @@
+<% content_for :title  do %>
+  <%= @topic.title %>
+<% end %>
+
+<%= content_for :keywords do %>
+  <%= @topic.seo_keyword %>
+<% end %>
+
 <link rel="stylesheet" href="/kkb/forum_detail.css">
     <div class="main">
       <div class="left">
