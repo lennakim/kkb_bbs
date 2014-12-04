@@ -4,12 +4,12 @@
                   <%= image_tag "head-img.gif" %>
                 </dt>
                 <dd class="post-name">
-                  <% if topic.level == 4%>
+                  <% if topic.level == 4 %>
                   <span class="tag-top">置顶</span>
                   <% end %>
                   <span><%= link_to topic.title, topic_path(topic)%></span>
                   <span class="tag-new">NEW</span>
-                  <% if topic.level == 3%>
+                  <% if topic.level == 3 %>
                     <span class="tag-best">精华</span>
                   <% end %>
                   <span class="tag-mark">
@@ -21,7 +21,7 @@
                   <span><%= format_datetime(topic.created_at) %></span>
                   <var>·</var>
                   <span><%= topic.node.title %></span><var>·</var>
-                  <span>0浏览</span><var>·</var>
+                  <span><%= topic.views.to_i %>浏览</span><var>·</var>
                   <span><%= topic.comments_count %>回复</span>
                 </dd>
                 <% if is_admin? %>

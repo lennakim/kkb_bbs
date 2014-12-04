@@ -2,11 +2,11 @@ class NodesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @nodes = Node.all
+    @nodes = Node.list
   end
 
   def show
-    @node = Node.find_by(id: params[:id])
+    @node = Node.find(params[:id])
     @topics = @node.topics.page(params[:page])
   end
 end

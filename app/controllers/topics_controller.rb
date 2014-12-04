@@ -21,6 +21,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic.update(views: (@topic.views.to_i + 1))
     @topic_user = @topic.user
     @first_comment = @topic.first_comment
     @second_comment = @topic.second_comment

@@ -31,9 +31,10 @@
             </dd>
             <dd class="post-info">
               <span><%= @topic.user.name %></span><var>·</var>
-              <span><%= format_datetime(@topic.created_at) %></span><var>·</var>
+              <span><%= format_datetime(@topic.created_at) %></span>
+              <var>·</var>
               <span><%= @topic.node.title %></span><var>·</var>
-              <span>0浏览</span><var>·</var>
+              <span><%= @topic.views.to_i %>浏览</span><var>·</var>
               <span><%= @topic.comments_count %>回复</span>
             </dd>
             <dd class="con">
