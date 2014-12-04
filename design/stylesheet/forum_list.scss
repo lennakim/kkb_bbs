@@ -1,0 +1,22 @@
+@import 'common';
+
+.wrapper{
+	.main{
+		.left{
+			.crumbs{
+				color: #666;
+				margin-bottom: 20px;
+				a{
+					color: #666;
+				}
+			}
+			.post-list{
+				.best,.hot,.new{
+					.border-bottom{
+						border-bottom: 1px dashed #fbfbfb
+					}
+				}
+			}
+		}
+	}
+}

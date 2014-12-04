@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: 0; }
+
+.wrapper {
+  width: 100%;
+  background: #f4f4f4; }
+  .wrapper .main {
+    width: 75%;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative; }
+    .wrapper .main .left, .wrapper .main .right {
+      float: left; }
+    .wrapper .main .left {
+      width: 70%;
+      margin-right: 3%; }
+      .wrapper .main .left .post-list {
+        background: #fff;
+        border-radius: 5px;
+        padding: 10px; }
+        .wrapper .main .left .post-list .title {
+          overflow: hidden;
+          height: 45px;
+          line-height: 35px;
+          color: #555555;
+          border-bottom: 1px solid #d0d0d0; }
+          .wrapper .main .left .post-list .title h3 {
+            float: left;
+            margin-left: 15px; }
+          .wrapper .main .left .post-list .title .tags {
+            float: right;
+            width: 240px;
+            margin-top: 6px;
+            overflow: hidden; }
+            .wrapper .main .left .post-list .title .tags li {
+              float: left;
+              height: 25px;
+              line-height: 25px;
+              padding: 0 8px;
+              border-radius: 5px; }
+              .wrapper .main .left .post-list .title .tags li:hover {
+                background-color: #EEEDED; }
+            .wrapper .main .left .post-list .title .tags .selected {
+              background-color: #308ee3;
+              color: #fff; }
+              .wrapper .main .left .post-list .title .tags .selected:hover {
+                background-color: #308ee3; }
+        .wrapper .main .left .post-list .hidden {
+          display: none; }
+        .wrapper .main .left .post-list .best, .wrapper .main .left .post-list .hot, .wrapper .main .left .post-list .new {
+          overflow: hidden;
+          padding-bottom: 15px; }
+          .wrapper .main .left .post-list .best dl, .wrapper .main .left .post-list .hot dl, .wrapper .main .left .post-list .new dl {
+            overflow: hidden;
+            padding: 20px;
+            border-bottom: 1px dashed #ccc; }
+            .wrapper .main .left .post-list .best dl:hover, .wrapper .main .left .post-list .hot dl:hover, .wrapper .main .left .post-list .new dl:hover {
+              background: #fbfbfb; }
+            .wrapper .main .left .post-list .best dl dt, .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dt, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dt, .wrapper .main .left .post-list .new dl dd {
+              float: left; }
+            .wrapper .main .left .post-list .best dl dt, .wrapper .main .left .post-list .hot dl dt, .wrapper .main .left .post-list .new dl dt {
+              width: 15%; }
+            .wrapper .main .left .post-list .best dl .post-name a, .wrapper .main .left .post-list .hot dl .post-name a, .wrapper .main .left .post-list .new dl .post-name a {
+              color: #308ee3; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-top, .wrapper .main .left .post-list .best dl .post-name .tag-new, .wrapper .main .left .post-list .best dl .post-name .tag-best, .wrapper .main .left .post-list .best dl .post-name .tag-mark, .wrapper .main .left .post-list .hot dl .post-name .tag-top, .wrapper .main .left .post-list .hot dl .post-name .tag-new, .wrapper .main .left .post-list .hot dl .post-name .tag-best, .wrapper .main .left .post-list .hot dl .post-name .tag-mark, .wrapper .main .left .post-list .new dl .post-name .tag-top, .wrapper .main .left .post-list .new dl .post-name .tag-new, .wrapper .main .left .post-list .new dl .post-name .tag-best, .wrapper .main .left .post-list .new dl .post-name .tag-mark {
+              border-radius: 5px;
+              width: 40px;
+              height: 20px;
+              line-height: 20px;
+              text-align: center; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-top, .wrapper .main .left .post-list .best dl .post-name .tag-new, .wrapper .main .left .post-list .hot dl .post-name .tag-top, .wrapper .main .left .post-list .hot dl .post-name .tag-new, .wrapper .main .left .post-list .new dl .post-name .tag-top, .wrapper .main .left .post-list .new dl .post-name .tag-new {
+              border: 1px solid #ff5454;
+              color: #ff5454; }
+            .wrapper .main .left .post-list .best dl .post-name .tag-best, .wrapper .main .left .post-list .hot dl .post-name .tag-best, .wrapper .main .left .post-list .new dl .post-name .tag-best {
+              border: 1px solid #1c9733;
+              color: #1c9733; }
+            .wrapper .main .left .post-list .best dl .post-info, .wrapper .main .left .post-list .hot dl .post-info, .wrapper .main .left .post-list .new dl .post-info {
+              color: #555555;
+              font-size: 14px;
+              margin-top: 15px; }
+              .wrapper .main .left .post-list .best dl .post-info span, .wrapper .main .left .post-list .best dl .post-info var, .wrapper .main .left .post-list .hot dl .post-info span, .wrapper .main .left .post-list .hot dl .post-info var, .wrapper .main .left .post-list .new dl .post-info span, .wrapper .main .left .post-list .new dl .post-info var {
+                float: left;
+                margin: 0 5px; }
+            .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dd {
+              width: 68%; }
+      .wrapper .main .left .page {
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        margin: 20px 0;
+        overflow: hidden;
+        border-radius: 5px;
+        color: #298be6;
+        border: 1px solid #ccc; }
+        .wrapper .main .left .page li {
+          float: left;
+          width: 40px;
+          text-align: center;
+          border-right: 1px solid #ccc; }
+          .wrapper .main .left .page li:last-child {
+            border: 0; }
+        .wrapper .main .left .page .selected {
+          background: #298be6;
+          color: #fff; }
+        .wrapper .main .left .page .gray {
+          color: #ccc; }
+    .wrapper .main .right {
+      width: 27%;
+      position: relative; }
+      .wrapper .main .right .search {
+        width: 99%;
+        height: 40px;
+        border-radius: 4px;
+        font-size: 20px; }
+      .wrapper .main .right .search-bar {
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        border-left: 2px solid #ccc;
+        padding-left: 5px; }
+      .wrapper .main .right .new-topic {
+        width: 100%;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 5px;
+        margin: 20px 0;
+        background: #288ce6;
+        color: #fff;
+        font-size: 20px; }
+      .wrapper .main .right .topic h2, .wrapper .main .right .share h2 {
+        margin: 40px 0 20px; }
+      .wrapper .main .right .topic ul {
+        overflow: hidden; }
+        .wrapper .main .right .topic ul li {
+          width: 48%;
+          height: 30px;
+          line-height: 30px;
+          color: #555555;
+          text-align: center;
+          float: left;
+          margin-bottom: 5px;
+          background: #f4f4f4;
+          border-radius: 5px; }
+          .wrapper .main .right .topic ul li:hover {
+            background: #288ce6;
+            color: #fff; }
+          .wrapper .main .right .topic ul li:nth-child(odd) {
+            margin-right: 4%; }
+        .wrapper .main .right .topic ul .selected {
+          background: #288ce6;
+          color: #fff; }
+      .wrapper .main .right .share {
+        margin-bottom: 50px; }
+        .wrapper .main .right .share h2 {
+          margin: 40px 0 20px; }
+        .wrapper .main .right .share dl {
+          border-bottom: 1px dashed #ccc;
+          padding: 8px 0; }
+          .wrapper .main .right .share dl dt a {
+            font-size: 16px;
+            color: #555555; }
+          .wrapper .main .right .share dl dd {
+            font-size: 14px;
+            color: #adadad; }
+    .wrapper .main .sidebar {
+      position: fixed;
+      top: 200px;
+      right: 25px; }
+      .wrapper .main .sidebar dl {
+        overflow: hidden;
+        width: 110px;
+        height: 55px;
+        color: #555555;
+        margin-bottom: 5px; }
+        .wrapper .main .sidebar dl dt, .wrapper .main .sidebar dl dd {
+          padding: 5%;
+          margin-right: 5px;
+          width: 35%;
+          text-align: center;
+          float: left; }
+        .wrapper .main .sidebar dl dt {
+          background: #fff;
+          line-height: 60px; }
+        .wrapper .main .sidebar dl dd {
+          background: #288ce6;
+          color: #fff;
+          display: none; }
+
+.wrapper .main .left .slider {
+  width: 100%;
+  height: 237px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px; }
+  .wrapper .main .left .slider .show {
+    width: 75%;
+    float: left; }
+  .wrapper .main .left .slider .description {
+    width: 71%;
+    position: absolute;
+    bottom: 0;
+    background: #000;
+    opacity: 0.6;
+    padding: 2%; }
+    .wrapper .main .left .slider .description span {
+      display: block;
+      color: #fff; }
+      .wrapper .main .left .slider .description span:nth-child(1) {
+        font-size: 14px; }
+      .wrapper .main .left .slider .description span:nth-child(2) {
+        font-size: 12px; }
+  .wrapper .main .left .slider .slider-tag {
+    width: 25%;
+    float: right; }
+    .wrapper .main .left .slider .slider-tag img {
+      width: 100%;
+      height: 30%;
+      float: left; }
+.wrapper .main .left .post-list .best, .wrapper .main .left .post-list .hot, .wrapper .main .left .post-list .new {
+  border-bottom: 1px solid #f4f4f4; }
+  .wrapper .main .left .post-list .best dl .choice, .wrapper .main .left .post-list .hot dl .choice, .wrapper .main .left .post-list .new dl .choice {
+    width: 7%;
+    float: right; }
+  .wrapper .main .left .post-list .best .border-bottom, .wrapper .main .left .post-list .hot .border-bottom, .wrapper .main .left .post-list .new .border-bottom {
+    border-bottom: 1px dashed #fbfbfb; }
+  .wrapper .main .left .post-list .best .edit, .wrapper .main .left .post-list .hot .edit, .wrapper .main .left .post-list .new .edit {
+    width: 35%;
+    float: right;
+    font-size: 12px;
+    margin: 10px 0; }
+    .wrapper .main .left .post-list .best .edit .choice, .wrapper .main .left .post-list .best .edit .edit, .wrapper .main .left .post-list .hot .edit .choice, .wrapper .main .left .post-list .hot .edit .edit, .wrapper .main .left .post-list .new .edit .choice, .wrapper .main .left .post-list .new .edit .edit {
+      margin: 10px 0; }
+    .wrapper .main .left .post-list .best .edit .choice, .wrapper .main .left .post-list .hot .edit .choice, .wrapper .main .left .post-list .new .edit .choice {
+      width: 90%;
+      text-align: right;
+      color: #555555; }
+    .wrapper .main .left .post-list .best .edit .edit, .wrapper .main .left .post-list .hot .edit .edit, .wrapper .main .left .post-list .new .edit .edit {
+      width: 100%;
+      overflow: hidden;
+      color: #fff; }
+      .wrapper .main .left .post-list .best .edit .edit li, .wrapper .main .left .post-list .hot .edit .edit li, .wrapper .main .left .post-list .new .edit .edit li {
+        padding: 10px;
+        background: #288ce6;
+        border-radius: 5px;
+        float: left; }
+        .wrapper .main .left .post-list .best .edit .edit li:nth-child(1), .wrapper .main .left .post-list .hot .edit .edit li:nth-child(1), .wrapper .main .left .post-list .new .edit .edit li:nth-child(1) {
+          margin-right: 5px; }
+.wrapper .main .right .ad-img img {
+  margin-bottom: 10px; }
