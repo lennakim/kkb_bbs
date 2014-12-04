@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def is_admin?
-    current_user && current_user.admin?
+    current_user && (current_user.admin? || current_user.s_admin?)
   end
 end

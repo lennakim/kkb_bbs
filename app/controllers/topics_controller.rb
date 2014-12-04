@@ -48,9 +48,7 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic.update(topic_params)
-
-    if @topic.update
+    if @topic.update(topic_params)
       redirect_to @topic
     else
       render action: :edit
