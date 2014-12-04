@@ -7,8 +7,28 @@ module UserManage
     end
   end
 
-  def set_admin_role(user)
+  def set_admin(user)
     user.update(role: 'admin') if self.s_admin?
+  end
+
+  def unset_admin
+    user.update(role: '') if self.s_admin?
+  end
+
+  def set_forbidden(user)
+    user.update(is_forbid: true)
+  end
+
+  def unset_forbidden(user)
+    user.update(is_forbid: false)
+  end
+
+  def set_lock(user)
+    user.update(locked_at: Time.mow)
+  end
+
+  def unset_lock(user)
+    user.update(locked_at: nil)
   end
 
   def s_admin?
