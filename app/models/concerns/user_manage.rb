@@ -11,7 +11,7 @@ module UserManage
     user.update(role: 'admin') if self.s_admin?
   end
 
-  def unset_admin
+  def unset_admin(user)
     user.update(role: '') if self.s_admin?
   end
 
