@@ -34,18 +34,12 @@
         </div>
       </div>
       <div class="right">
-        <%= form_tag(search_topics_path, method: :get) do %>
-          <%= text_field_tag :q, nil, class: 'search' %>
-          <%= image_tag "search_icon.png", class: "search-bar" %>
-        <% end %>
+        <%= render "/shared/search" %>
 
-        <a href="<%= new_topic_path %>">
-          <%= image_tag "new_topic.png", class: "new-topic" %>
-        </a>
         <div class="topic">
           <h2>社区话题</h2>
           <ul class="topic-tag">
-            <% Node.all.each do |node| %>
+            <% Node.list.each do |node| %>
               <li><%= link_to "#{node.title}(#{node.topics.count})", topics_path(node_id: node.id) %></li>
             <% end %>
           </ul>

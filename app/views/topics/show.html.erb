@@ -138,40 +138,7 @@
         </div>
       </div>
       <div class="right">
-        <input class="search" type="text">
-        <%= image_tag "search_icon.png", class: 'search-bar' %>
-
-        <a href="<%= new_topic_path %>">
-          <%= image_tag "new_topic.png", class:  'new-topic' %>
-        </a>
-        <div class="topic">
-          <h2>社区话题</h2>
-          <ul class="topic-tag">
-            <% Node.all.each do |node| %>
-              <li><%=node.title%>(<%= node.topics.count%>)</li>
-            <% end %>
-            <li>屌丝集中营</li>
-            <li>挨踢肿么了</li>
-          </ul>
-        </div>
-        <div class="share">
-          <h2>资源分享</h2>
-          <dl>
-            <dt>移动互联网创业者生存生存者移动互联网创业者生存创业创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-          <dl>
-            <dt>移动互联网创业者生存</dt>
-            <dd>作者：蓝色泡沫</dd>
-          </dl>
-        </div>
+        <%= render "/shared/search" %>
+        <%= render "shared/topic_right" %>
       </div>
     </div>
