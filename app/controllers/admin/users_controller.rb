@@ -46,6 +46,27 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
+  def add_admin
+    @admins = User.where(role: "admin")
+  end
+
+  def set_admin
+    params.permit!
+    @user = User.find_by(email: params[:email])
+    if @user
+      if @user.role == "admin"
+        @user.update(role: "")
+        redirect_to admin_user_add_admin_path
+      else
+        @user.update(role: "admin")
+        redirect_to admin_user_add_admin_path
+      end
+    else
+      redirect_to admin_user_add_admin_path
+    end
+    
+  end
+
   private
 
   def find_user

@@ -1,0 +1,15 @@
+<h3>管理员管理</h3>
+<hr>
+<h4>添加管理员</h4>
+<form action="/admin/user/set_admin" method="get">
+  <p>电子邮件:<input type="text" name="email" /></p>
+  <input type="submit" value="提交" />
+</form>
+<h4>管理员列表</h4>
+<%= table_for(@admins, class: 'table table-bordered') do |t|%>
+  <% t.column :email, "电子邮件"%>
+  <% t.column :name, "用户名"%>
+  <% t.column :actions, "操作" do |ad|%>
+    <%= link_to "移除", admin_user_set_admin_path(:email => ad.email)%>
+  <% end %>
+<% end %>
