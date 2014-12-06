@@ -100,7 +100,8 @@ img {
         margin: 20px 0;
         overflow: hidden;
         border-radius: 5px;
-        color: #298be6;
+        background: #298be6;
+        color: #fff;
         border: 1px solid #ccc; }
         .wrapper .main .left .pagination span {
           float: left;
