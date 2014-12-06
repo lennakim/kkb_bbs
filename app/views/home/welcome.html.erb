@@ -11,10 +11,10 @@
             </p>
           </a>
           <ul class="slider-tag">
-            <li> <%= image_tag "slider1.jpg" %> </li>
-            <li> <%= image_tag "logo.png" %> </li>
-            <li> <%= image_tag "write.gif" %> </li>
-            </ul>
+            <% @sliders.each do |slider|%>
+            <li> <%= image_tag slider.image_url %> </li>
+            <% end %>
+          </ul>
         </div>
         <div class="post-list">
           <div class="title">

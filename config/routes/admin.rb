@@ -26,6 +26,7 @@ namespace :admin do
       match 'search' => 'users#search', via: [:get, :post], as: :search
     end
   end
-
+  get '/user/add_admin' => 'users#add_admin'
+  get '/user/set_admin' => 'users#set_admin'
   root "dashboard#index", as: :dashboard
 end

@@ -8,7 +8,9 @@
                   <span class="tag-top">置顶</span>
                   <% end %>
                   <span><%= link_to topic.title, topic_path(topic)%></span>
+                  <% if (Time.now - topic.created_at) < 24.hour %>
                   <span class="tag-new">NEW</span>
+                  <% end %>
                   <% if topic.level == 3 %>
                     <span class="tag-best">精华</span>
                   <% end %>

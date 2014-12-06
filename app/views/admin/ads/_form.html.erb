@@ -8,19 +8,20 @@
   <p>
   二级标题：<%= f.text_field :sub_title %>
   <p>
+    
+    <p>
   上传文件：<%= f.file_field :image,:id => "imgInp" %>
 
-  <% unless @ad.new_record? %>
     <p>
-      <strong>大图</strong>
+      <strong>大图</strong><small style ="color:red">大小640px X 300px</small>
     <p>
-    <%= image_tag "img_up.png",:id => "blah"%>
+    <%= image_tag "/kkb/img_up.png",:id => "blah", :width => "640px", :height => "300px"%>
     <p>
     <strong>小图</strong>
     <p>
-    <%= image_tag "img_up.png",:id => "blaz"%>
+    <%= image_tag "/kkb/img_up.png",:id => "blaz", :width => "213px", :height => "100px"%>
     <p>
-  <% end %>
+
   <strong>状态</strong>
   <select class="form-control" name="ad[status]">
     <option value = 0>上线</option>
