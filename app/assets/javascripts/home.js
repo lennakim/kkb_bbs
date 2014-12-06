@@ -13,4 +13,17 @@ $(function(){
 		}
 		$('.slider-tag li img').eq(index).click();
 	},3000);
+
+	//举报
+	$('.inform-bac').css({'width':$(document.body).width(),
+						'height':$(document.body).height()
+						});
+	$('.inform-con').css({'top':$(document.body).scrollTop()});
+	$('.inform').click(function(){
+		$('.inform-bac,.inform-con').removeClass('hidden');
+	});
+
+	$('.inform-con').click(function(){
+		$('.inform-bac,.inform-con').addClass('hidden');
+	});
 })

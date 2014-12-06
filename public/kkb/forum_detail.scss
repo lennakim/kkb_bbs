@@ -30,9 +30,6 @@ $bac-orange: #faaa3c;
 		}
 		.left{
 			width: 70%;
-			.hidden{
-				display: none;
-			}
 			.crumbs{
 				color: #666;
 				margin-bottom: 20px;
@@ -241,6 +238,86 @@ $bac-orange: #faaa3c;
 						}
 					}
 				}
+        .inform-bac{
+          background: #ccc;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 999;
+          opacity: .5;
+        }
+        .hidden{
+          display: none;
+        }
+        .inform-con{
+          background: #fff;
+          width: 470px;
+          position: absolute;
+          top: 200px;
+          left: 250px;
+          z-index: 9999;
+          h3{
+            color: $font-gray;
+            border-bottom: 1px solid #ccc;
+            line-height:60px;
+            text-indent: 1em;
+          }         
+          dl{
+            height: 310px;
+            padding: 20px 30px;
+          }
+          dt{
+            margin-top: -4px;
+            padding:0;
+            width: auto;
+            float:none;
+            text-align: left;
+            p{
+              text-align: left;
+            }
+          }
+          dd{
+            width: 100%;
+            padding: 0;
+            float:none;
+            text-align:left;
+            margin-top: 1.6em;            
+            textarea{
+              width: 100%;
+              height: 120px;
+              border-radius: 5px;
+            }
+            p{  
+              font-size: 14px;
+              color: $font-gray;
+              line-height: 2.5em;
+            }
+          }
+          .username{
+            color: $font-blue;
+          }
+          .btn{
+            margin-top: .9em;
+            cursor: pointer;
+            cursor: hand;
+            span{
+              font-size: 1.2em;
+              color: #fff;
+              line-height: 38px;
+              display: inline-block;
+              width: 124px;
+              border-radius: 5px;
+              text-align: center;
+              margin-right: .3em;
+            }
+            span:first-child{             
+              background-color: $font-blue;
+            }
+            span:last-child{
+              background-color: $font-blue;
+            }
+          }
+        }
 			}
 			.post-reply{
 				margin-top: 20px;

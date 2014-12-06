@@ -44,7 +44,7 @@
               <ul class="share-btn">
                 <li>分享到：</li>
                 <%= social_share_button_tag(@topic.title, url: request.fullpath) %>
-                <li><a href="">举报</a></li>
+                <li class="inform"><a>举报</a></li>
               </ul>
               <ul class="reply-btn">
                 <li>
@@ -118,6 +118,25 @@
               </dd>
             <% end %>
           </dl>
+          <div class="inform-bac hidden"></div>
+          <div class="inform-con hidden">
+            <h3>我要举报</h3>
+            <dl>
+              <dt>
+                <span class="username">用户名</span>
+                <span>所发布的</span>
+                <p>帖子名称</p>
+              </dt>
+              <dd>
+                <p>举报原因</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <div class="btn">
+                  <span>提交举报</span>
+                  <span>取消举报</span>
+                </div>
+              </dd>
+            </dl> 
+          </div>
         </div>
         <div class="post-reply">
           <dl>
@@ -136,3 +155,4 @@
         <%= render "shared/topic_right" %>
       </div>
     </div>
+
