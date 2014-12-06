@@ -3,8 +3,8 @@ zh-CN:
     pagination:
       first: "&laquo;"
       last: "&raquo;"
-      previous: "&lsaquo;"
-      next: "&rsaquo;"
+      previous: "&lsaquo;&lsaquo;"
+      next: "&rsaquo;&rsaquo;"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
