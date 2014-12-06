@@ -1,39 +1,51 @@
-用户名：<%= @user.name%>
-<p>
-电子邮件：<%= @user.email%>
-<p>
-注册时间：<%= @user.created_at%>
-<p>
-发帖数：<%= @user.topics.count%>
-<p>
-回复数：<%= @user.comments.count%>
-<p>
-<%if @user.forbidden? %>
-    <%= link_to "移除黑名单", edit_admin_user_path(@user)%>
-  <% else %>
-    <%= link_to "加入黑名单", edit_admin_user_path(@user)%>
+<style>
+  .con{
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    line-height: 30px;
+  }
+  p{
+    margin: 0;
+  }
+</style>
+<div class="con">
+  用户名：<%= @user.name%>
+  <p>
+  电子邮件：<%= @user.email%>
+  <p>
+  注册时间：<%= @user.created_at%>
+  <p>
+  发帖数：<%= @user.topics.count%>
+  <p>
+  回复数：<%= @user.comments.count%>
+  <p>
+  <%if @user.forbidden? %>
+      <%= link_to "移除黑名单", edit_admin_user_path(@user)%>
+    <% else %>
+      <%= link_to "加入黑名单", edit_admin_user_path(@user)%>
+    <% end %>
+  <p>
+    <%if @user.locked? %>
+        <%= link_to "封禁", "#"%>
+      <% else %>
+        <%= link_to "封禁", "#"%>
+      <% end %>
+  <p>
+  状态：<% if @user.forbidden?%>
+        黑名单
+      <% elsif @user.locked? %>
+        封禁
+      <% else %>
+        正常
+      <% end %>
+  <h3>用户帖子数</h3>
+  <% @topics.each do |topic|%>
+    <%= topic.title %>
+    <%=raw topic.body %>
   <% end %>
-<p>
-  <%if @user.locked? %>
-      <%= link_to "封禁", "#"%>
-    <% else %>
-      <%= link_to "封禁", "#"%>
-    <% end %>
-<p>
-状态：<% if @user.forbidden?%>
-      黑名单
-    <% elsif @user.locked? %>
-      封禁
-    <% else %>
-      正常
-    <% end %>
-<h1>用户帖子数</h1>
-<% @topics.each do |topic|%>
-  <%= topic.title %>
-  <%=raw topic.body %>
-<% end %>
-<h1>用户回复</h1>
-<% @comments.each do |cooment|%>
-  <%= cooment.commentable.title %>
-  <%= cooment.body %>
-<% end %>
+  <h3>用户回复</h3>
+  <% @comments.each do |cooment|%>
+    <%= cooment.commentable.title %>
+    <%= cooment.body %>
+  <% end %>
+</div>
