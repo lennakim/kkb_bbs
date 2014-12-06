@@ -100,9 +100,12 @@ img {
         margin: 20px 0;
         overflow: hidden;
         border-radius: 5px;
-        background: #298be6;
-        color: #fff;
+        color: #298be6;
+        background: #fff;
         border: 1px solid #ccc; }
+        .wrapper .main .left .pagination .current {
+          background: #298be6;
+          color: #fff; }
         .wrapper .main .left .pagination span {
           float: left;
           width: 40px;
