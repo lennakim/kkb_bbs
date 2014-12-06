@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/Scott1743/simditor.git
+  revision: ee7445805e787ab59f7a34bc35a58284b1e35b2b
+  branch: universal_version
+  specs:
+    simditor (0.1.0)
+      carrierwave (~> 0.10.0)
+      rails (> 3.2.18)
+
+GIT
   remote: git://github.com/activerecord-hackery/ransack.git
   revision: 742425ade4bb66db573dc13bf436a8f3c87b733b
   branch: rails-4.1
@@ -241,6 +250,7 @@ DEPENDENCIES
   rubycas-client!
   sass-rails (~> 4.0.3)
   settingslogic
+  simditor!
   simple_form
   slim-rails
   social-share-button

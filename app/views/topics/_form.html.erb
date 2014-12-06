@@ -26,8 +26,8 @@
         <div class="post-item">
           <span class="title">帖子内容</span>
           <div class="con">
-            <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
-              <%= f.submit "发布新帖", class:"btn"%>
+            <%= f.text_area :body, simditor: true %>
+            <%= f.submit "发布新帖", class:"btn"%>
           </div>
         </div>
       <% end %>

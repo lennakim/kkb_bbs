@@ -1,7 +1,6 @@
 <%= simple_form_for(commentable.comments.new) do |f| %>
-
-<%= hidden_field_tag 'commentable', "#{commentable.class.to_s}/#{commentable.id}" %>
-  <%= f.kindeditor :body, window_onload: true, cols:"30", rows:"10" %>
+  <%= hidden_field_tag 'commentable', "#{commentable.class.to_s}/#{commentable.id}" %>
+  <%= f.text_area :body, simditor: 450 %>
 
   <ul class="post-btn">
     <li><input type="reset" value="取消"/></li>

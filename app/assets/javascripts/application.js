@@ -2,6 +2,8 @@
 //= require jquery_ujs
 //= require kindeditor
 //= require social-share-button
+//= require simditor
+//= require simditor/init
 //= require_tree .
 
 $(document).ready(function(){

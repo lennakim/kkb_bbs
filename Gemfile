@@ -24,6 +24,7 @@ gem 'easy_table'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 gem 'slim-rails'
 gem 'social-share-button' #share
+gem 'simditor', github: 'Scott1743/simditor', branch: 'universal_version'
 
 # elasticsearch
 gem 'elasticsearch', '~> 1.0.6'
