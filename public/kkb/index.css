@@ -238,7 +238,7 @@ img {
   .wrapper .main .left .post-list .best .border-bottom, .wrapper .main .left .post-list .hot .border-bottom, .wrapper .main .left .post-list .new .border-bottom {
     border-bottom: 1px dashed #fbfbfb; }
   .wrapper .main .left .post-list .best .edit, .wrapper .main .left .post-list .hot .edit, .wrapper .main .left .post-list .new .edit {
-    width: 35%;
+    width: 40%;
     float: right;
     font-size: 12px;
     margin: 10px 0; }
