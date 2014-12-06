@@ -259,5 +259,7 @@ img {
         float: left; }
         .wrapper .main .left .post-list .best .edit .edit li:nth-child(1), .wrapper .main .left .post-list .hot .edit .edit li:nth-child(1), .wrapper .main .left .post-list .new .edit .edit li:nth-child(1) {
           margin-right: 5px; }
+        .wrapper .main .left .post-list .best .edit .edit li a, .wrapper .main .left .post-list .hot .edit .edit li a, .wrapper .main .left .post-list .new .edit .edit li a {
+          color: #fff; }
 .wrapper .main .right .ad-img img {
   margin-bottom: 10px; }
