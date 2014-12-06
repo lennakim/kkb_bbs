@@ -93,26 +93,27 @@ img {
                 margin: 0 5px; }
             .wrapper .main .left .post-list .best dl dd, .wrapper .main .left .post-list .hot dl dd, .wrapper .main .left .post-list .new dl dd {
               width: 68%; }
-      .wrapper .main .left .page {
+      .wrapper .main .left .pagination {
         float: right;
         height: 40px;
         line-height: 40px;
         margin: 20px 0;
         overflow: hidden;
         border-radius: 5px;
-        color: #298be6;
+        background: #298be6;
+        color: #fff;
         border: 1px solid #ccc; }
-        .wrapper .main .left .page li {
+        .wrapper .main .left .pagination span {
           float: left;
           width: 40px;
           text-align: center;
           border-right: 1px solid #ccc; }
-          .wrapper .main .left .page li:last-child {
+          .wrapper .main .left .pagination span:last-child {
             border: 0; }
-        .wrapper .main .left .page .selected {
+        .wrapper .main .left .pagination .selected {
           background: #298be6;
           color: #fff; }
-        .wrapper .main .left .page .gray {
+        .wrapper .main .left .pagination .gray {
           color: #ccc; }
     .wrapper .main .right {
       width: 27%;
