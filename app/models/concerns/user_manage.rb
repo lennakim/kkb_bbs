@@ -24,7 +24,7 @@ module UserManage
   end
 
   def set_lock(user)
-    user.update(locked_at: Time.mow)
+    user.update(locked_at: Time.now)
   end
 
   def unset_lock(user)
@@ -36,19 +36,31 @@ module UserManage
   end
 
   def admin?
-    role == 'admin'
+    self.role == 'admin'
   end
 
   def normal? #是否正常
-    (!locked?) and (!forbidden?)
+    unless (s_admin? || admin?)
+      (!locked?) and (!forbidden?)
+    else
+      true
+    end
   end
 
   def locked? #是否禁言
-    locked_at.present? and ((locked_at + LOCK_TIME) < Time.now)
+    unless (s_admin? || admin?)
+      locked_at.present? and ((locked_at + User::LOCK_TIME) > Time.now)
+    else
+      false
+    end
   end
 
   def forbidden? #是否拉黑
-    is_forbid
+    unless (s_admin? || admin?)
+      is_forbid
+    else
+      false
+    end
   end
 
   def active? #是否激活

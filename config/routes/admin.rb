@@ -1,5 +1,8 @@
 namespace :admin do
-  resources :topics
+  resources :topics do
+    post :trash_all, on: :collection
+  end
+
   get '/topic/recycle' => 'topics#add_to_recycle'
   get '/recycle_list' => 'topics#recycle_topic'
   get '/topic/topic_top' => 'topics#recycle_topic'

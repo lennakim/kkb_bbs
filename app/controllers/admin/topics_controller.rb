@@ -7,7 +7,7 @@ class Admin::TopicsController < Admin::BaseController
 
   def show
     if @topic != nil
-      @comments = @topic.comments  
+      @comments = @topic.comments
     else
       @topic = Topic.with_trashed.find(params[:id])
     end
@@ -20,22 +20,22 @@ class Admin::TopicsController < Admin::BaseController
 
   def add_to_recycle
     if @topic != nil
-      @topic.update(:is_trashed => true)  
+      @topic.update(:is_trashed => true)
       @a = 0
     else
       @topic = Topic.with_trashed.find(params[:id])
-      @topic.update(:is_trashed => false)  
+      @topic.update(:is_trashed => false)
       @a = 1
     end
     if @topic.save
       if @a == 0
-        redirect_to admin_topics_path  
+        redirect_to admin_topics_path
       else
         redirect_to admin_recycle_list_path
       end
     else
       if @a == 1
-        redirect_to admin_topics_path  
+        redirect_to admin_topics_path
       else
         redirect_to admin_recycle_list_path
       end
@@ -44,18 +44,37 @@ class Admin::TopicsController < Admin::BaseController
 
   def topic_top
     if @topic.level != 4
-      @topic.update(:level => 4)  
+      @topic.update(:level => 4)
     else
-      @topic.update(:level => nil)  
+      @topic.update(:level => nil)
     end
   end
 
   def topic_good
     if @topic.level != 3
-      @topic.update(:level => 3)  
+      @topic.update(:level => 3)
     else
-      @topic.update(:level => nil)  
+      @topic.update(:level => nil)
     end
+  end
+
+  def trash_all
+
+    locked = params[:locked]
+
+    if params[:topic_ids]
+      ids = params[:topic_ids].split(",")
+
+      ids.each do |id|
+        topic = Topic.find_by(id: id)
+        user = topic.try(:user)
+        topic.try(:trash)
+
+        current_user.set_lock(user) if locked == "true"
+      end
+    end
+
+    render json: {status: :ok }
   end
 
   private

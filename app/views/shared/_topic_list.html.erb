@@ -1,4 +1,6 @@
-           <% @topics.each do |topic|%>
+          <% if  @topics.any? %>
+
+            <% @topics.each do |topic|%>
               <dl>
                 <dt>
                   <%= image_tag "head-img.gif" %>
@@ -9,7 +11,7 @@
                   <% end %>
                   <span><%= link_to topic.title, topic_path(topic)%></span>
                   <% if (Time.now - topic.created_at) < 24.hour %>
-                  <span class="tag-new">NEW</span>
+                    <span class="tag-new">NEW</span>
                   <% end %>
                   <% if topic.level == 3 %>
                     <span class="tag-best">精华</span>
@@ -27,8 +29,8 @@
                   <span><%= topic.comments_count %>回复</span>
                 </dd>
                 <% if is_admin? %>
-                <dd class="choice">
-                  <input name="check" type="checkbox">
+                <dd class="choice ">
+                  <input class="_topic" name="check" type="checkbox" data-topic-id="<%= topic.id %>">
                 </dd>
                 <% end %>
               </dl>
@@ -41,9 +43,16 @@
                   <span>全选</span>
                 </p>
                 <ul class="edit">
-                  <li class="delete"><%= link_to "删除帖子", "#" %></li>
-                  <li class="fobiden"><%= link_to "删除帖子,并封禁楼主3天", "#" %></li>
+                  <li class="delete"><%= link_to "删除帖子", "javascript:;" %></li>
+                  <li class="fobiden"><%= link_to "删除帖子,并封禁楼主3天", "javascript:;" %></li>
                 </ul>
-
               </div>
             <% end %>
+
+            <%= content_for :footer do %>
+              <% if is_admin? %>
+                <script src="/lib/batch_trash.js"></script>
+              <% end %>
+            <% end %>
+
+          <% end %>
