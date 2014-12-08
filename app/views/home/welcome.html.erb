@@ -20,9 +20,15 @@
           <div class="title">
             <h3>全部帖子</h3>
             <ul class="tags">
-              <li>精品帖子</li>
-              <li>热门帖子</li>
-              <li>最新帖子</li>
+              <li>
+                <%= link_to "精品帖子", topics_path(:level => 3)%>
+              </li>
+              <li>
+                <%= link_to "热门帖子", topics_path(:level => 2)%>
+              </li>
+              <li>
+                <%= link_to "最新帖子", topics_path %>
+              </li>
             </ul>
           </div>
           <div class="best list">

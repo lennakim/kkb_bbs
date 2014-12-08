@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20141206090805) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_trashed",        default: false
-    t.integer  "likes_count",       default: 0
+    t.integer  "like_counts",       default: 0
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20141206090805) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_trashed",      default: false
-    t.integer  "likes_count",     default: 0
+    t.integer  "like_counts",     default: 0
     t.string   "seo_keyword"
   end
 
