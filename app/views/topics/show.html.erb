@@ -19,7 +19,7 @@
           <% end %>
 
           <dl>
-            <dt><%= avatar_tag @topic_user.avatar %><p><%= @topic_user.name %></p></dt>
+            <dt><%= avatar_tag @topic_user %><p><%= @topic_user.name %></p></dt>
             <dd class="post-name">
               <span><%= link_to @topic.title, '#'%></span>
               <span class="tag-top">置顶</span>
@@ -64,7 +64,7 @@
                 <%= link_to "删除评论", trash_comment_path(@first_comment), method: :delete, data: { confirm: "确定删除？" } %>
               <% end %>
               <dt>
-                <%= avatar_tag @first_comment.user.avatar %>
+                <%= avatar_tag @first_comment.user %>
                 <p><%= @first_comment.user.name %></p>
               </dt>
               <dd>
@@ -141,7 +141,7 @@
         <div class="post-reply">
           <dl>
             <dt>
-              <%= avatar_tag current_user.avatar if current_user %>
+              <%= avatar_tag current_user if current_user %>
               <p><%= current_user.name if current_user %></p>
             </dt>
             <dd>

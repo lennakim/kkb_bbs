@@ -6,4 +6,8 @@ module ApplicationHelper
   def is_admin?
     current_user && (current_user.admin? || current_user.s_admin?)
   end
+
+  def avatar_tag(user, cls = "")
+    image_tag user.get_avatar, class: cls
+  end
 end

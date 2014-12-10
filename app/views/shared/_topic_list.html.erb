@@ -1,9 +1,9 @@
-          <% if  @topics.any? %>
+          <% if @topics.any? %>
 
             <% @topics.each do |topic|%>
               <dl>
                 <dt>
-                  <%= image_tag "head-img.gif" %>
+                  <%= avatar_tag topic.user %>
                 </dt>
                 <dd class="post-name">
                   <% if topic.level == 4 %>
