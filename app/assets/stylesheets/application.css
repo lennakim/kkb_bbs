@@ -3,3 +3,8 @@
  *= require 'simditor'
  *= require_self
  */
+
+.avatar_img {
+  width: 100px;
+  height: 100px;
+}
