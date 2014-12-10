@@ -22,4 +22,16 @@ class User < ActiveRecord::Base
     notifications.had_read.recent
   end
 
+  def get_avatar
+    url = Settings.avatar_url + id.to_s
+
+    RestClient.get(url) do |response, request, result, &block|
+      avatar = if [301, 302].include? response.code
+        response.headers[:location]
+        # update_attribute :avatar, avatar
+      end
+    end
+  end
 end
+
+

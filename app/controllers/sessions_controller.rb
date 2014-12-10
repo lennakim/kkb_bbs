@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
       if @user.blank?
         @user = User.new
+        @user.id = session[:cas_extra_attributes]['id']
         @user.uuid = session[:cas_extra_attributes]['uuid']
         @user.email = session[:cas_extra_attributes]['email']
         @user.name = session[:cas_extra_attributes]['name'] || session[:cas_extra_attributes]['username']
